@@ -7,12 +7,13 @@ import static utils.PackageUtil.getClasssFromPackage;
 
 public class RuleVerification {
     /**
-     * 此处类型分为base，safety，realTime, allaljshdiua GDSIFHBa
+     * 此处类型分为base，safety，realTime, all
      * @param type
      */
     public static void verifyType(String type)throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         if(type.equals("all")) {
             for (Class item : getClasssFromPackage("ruleEntity")) {
+                System.out.println();
                 Method method = item.getDeclaredMethod("excute");
                 System.out.println(item);
                 method.invoke(null);
@@ -20,6 +21,7 @@ public class RuleVerification {
         }
         else{
             for (Class item : getClasssFromPackage("ruleEntity."+type)) {
+                System.out.println();
                 Method method = item.getDeclaredMethod("excute");
                 System.out.println(item);
                 method.invoke(null);

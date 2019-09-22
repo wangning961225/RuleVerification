@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import verityfy.RuleVerification;
 
-
 public class Script {
     public static void Script() throws NoSuchMethodException, IllegalAccessException,InvocationTargetException{
         List<String> typeList = new ArrayList<>();
@@ -13,7 +12,6 @@ public class Script {
         typeList.add("base");
         typeList.add("safety");
         typeList.add("realTime");
-
 
         while (true) {
             Scanner sc = new Scanner(System.in);
@@ -27,7 +25,6 @@ public class Script {
             /**
              * verify type-safety 分类实现验证
              */
-
             if (rule[0].equals("type")) {
                 if (!typeList.contains(rule[1]))
                     System.out.println("不支持当前类型验证");

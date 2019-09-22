@@ -1,2 +1,1 @@
 # RuleVerification
-rule verification

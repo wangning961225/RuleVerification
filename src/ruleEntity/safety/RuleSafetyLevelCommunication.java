@@ -1,6 +1,5 @@
 package ruleEntity.safety;
 
-import utils.XMLParseUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

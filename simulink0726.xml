@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="isolette" wcet="15ms">
+    <component id="-1919443169" name="Operator Interface" type="rtos" wcet="1ms">
+        <linkpoint datatype="Inherit: Same as Simulink" direction="out" id="-1556617558" name="Operator_Settings" protocol="TCP"/>
+        <linkpoint direction="in" id="-1133628224" name="Operator_Feedback" protocol="UDP"/>
+        <linkpoint direction="in" id="-455489881" name="nurse_input" protocol="TCP"/>
+        <state id="-1457315656" name="Display">
+            <state id="-751362724" name="Idle"/>
+            <state id="-53663412" name="ShowMessage"/>
+            <transition dest="-751362724" event="" id="-190865001" source="-53663412"/>
+            <transition dest="-53663412" event="[Operator_Feedback &gt; 0]" id="-1106880540" source="-751362724"/>
+        </state>
+        <state id="1122966238" name="Set">
+            <state id="232888240" name="Idle"/>
+            <state id="1001012748" name="Setting"/>
+            <state id="1130248488" name="Invalid Input"/>
+            <transition dest="1130248488" event="[nurse_input &lt; 0]" id="-708092357" source="232888240"/>
+            <transition dest="232888240" event="" id="314282561" source="1130248488"/>
+            <transition dest="232888240" event="" id="1007765112" source="1001012748"/>
+            <transition dest="1001012748" event="[nurse_input &gt; 999 &amp;&amp; nurse_input &lt; 10000]" id="917362324" source="232888240"/>
+        </state>
+    </component>
+    <component id="532843875" name="Alarm" type="rtos" wcet="1ms">
+        <linkpoint direction="in" id="-341589476" name="cur_temperature" period="3ms" protocol="TCP"/>
+        <linkpoint datatype="Inherit: Same as Simulink" direction="out" id="1007339507" name="alarming" protocol="TCP"/>
+        <state do="" entry="" exit="" id="-1159237847" name="Alarming" wcet="0.5ms"/>
+        <state do="" entry="" exit="" id="-158730137" name="Checking" wcet="0.5ms"/>
+        <state do="" entry="" exit="" id="-104578022" name="Data_Process" wcet="1ms">
+            <state id="-1143401395" name="Idle"/>
+            <state do="" entry="" exit="report fault message" faultState="true" faultType="Invalid Data" id="-268637159" name="Fault_Invalid Data" wcet="0.5ms"/>
+            <state do="" entry="format the current temperature data" exit="send data" id="96826657" name="Format" wcet="0.5ms"/>
+            <state do="" entry="validate thedata" exit="" id="755146393" name="Data Validate" wcet="0.5ms"/>
+            <transition dest="-1143401395" event="" id="653841817" source="96826657"/>
+            <transition dest="-1143401395" event="" id="1402824043" source="-268637159"/>
+            <transition dest="755146393" event="[receive data]" id="1976034845" source="-1143401395"/>
+            <transition dest="96826657" event="[data is valid]" id="1300363702" source="755146393"/>
+            <transition dest="-268637159" event="[data is invalid]" id="-426991351" source="755146393"/>
+        </state>
+        <state id="1571525888" name="Idle"/>
+        <transition dest="-104578022" event="[cur_temperature &gt; 0]" id="871971512" source="1571525888"/>
+        <transition dest="1571525888" event="[cur_temperature &gt; 38 ||cur_temperature &lt; 35]" id="596451853" source="-158730137"/>
+        <transition dest="-158730137" event="[valid data]" id="-933963389" source="-104578022"/>
+        <transition dest="-1159237847" event="[(cur_temperature &lt; 38) &amp;&amp; (cur_temperature &gt; 35)]" id="1639606166" source="-158730137"/>
+    </component>
+    <component id="626103427" name="Heat Source" type="rtos">
+        <linkpoint direction="in" id="1565048731" name="Heat_Control" protocol="TCP"/>
+        <state id="226942970" name="Heating"/>
+        <state id="1146630959" name="Idle"/>
+        <transition dest="226942970" event="[Heat_Control = 1]" id="464560146" source="1146630959"/>
+        <transition dest="1146630959" id="-878141261" source="226942970"/>
+    </component>
+    <component id="1274260572" name="Temperature Sensor" type="rtos" wcet="0.1ms">
+        <linkpoint datatype="Inherit: Same as Simulink" direction="out" id="-1428038840" name="cur_temperature" period="3ms" protocol="TCP"/>
+        <state do="timer = 1" entry="" exit="" id="430596126" name="Collect Data" wcet="5ms"/>
+        <state id="1086683937" name="Send data"/>
+        <transition dest="1086683937" event="timer" id="1482670472" source="430596126"/>
+        <transition dest="430596126" id="-1107631091" source="1086683937"/>
+    </component>
+    <component id="1497978565" name="Thermostat" type="rtos" wcet="1ms">
+        <linkpoint datatype="Inherit: Same as Simulink" direction="out" id="-416631022" name="Heat_Control" protocol="TCP"/>
+        <linkpoint direction="in" id="200270917" name="cur_temperature" period="3ms" protocol="TCP"/>
+        <linkpoint datatype="Inherit: Same as Simulink" direction="out" id="572535544" name="operatorFeedback" protocol="UDP"/>
+        <linkpoint direction="in" id="1064290397" name="Operator_Settings" protocol="TCP"/>
+        <state id="-1513741916" name="Idle"/>
+        <state do="" entry="upper_limit = Operator_Settings/100;lower_limit = Operator_Settings%100;" exit="" id="-1495286956" name="Setting" wcet="0.5ms"/>
+        <state do="" entry="" exit="" id="-1465556627" name="Data_Process" wcet="1ms">
+            <state id="-482535615" name="Idle"/>
+            <state do="" entry="" exit="report fault message" faultState="true" faultType="Invalid Data" id="302386967" name="Fault_Invalid Data" wcet="0.5ms"/>
+            <state do="" entry="format the current temperature data" exit="send data" id="465664174" name="Format" wcet="0.5ms"/>
+            <state do="" entry="validate thedata" exit="" id="1668454543" name="Data Validate" wcet="0.5ms"/>
+            <transition dest="-482535615" event="" id="-682470957" source="465664174"/>
+            <transition dest="-482535615" event="" id="-821727200" source="302386967"/>
+            <transition dest="1668454543" event="[~(cur_temperature = null)]" id="580123564" source="-482535615"/>
+            <transition dest="465664174" event="[cur_temperature.instanceOf(double)]" id="629928812" source="1668454543"/>
+            <transition dest="302386967" event="[~cur_temperature.instanceOf(double)]" id="1409709593" source="1668454543"/>
+        </state>
+        <state do="" entry="" exit="" id="-747183443" name="Checking" wcet="0.5ms"/>
+        <state do="" entry="Operator_Feedback = 1" exit="" id="961907429" name="Feedback" wcet="0.5ms"/>
+        <state do="" entry="send heat control command" exit="" id="1950768195" name="Control" wcet="0.5ms"/>
+        <transition dest="-1513741916" id="-420396688" source="1950768195"/>
+        <transition dest="-1495286956" event="[~(Operator_Settings = 0)]" id="-210805090" source="-1513741916"/>
+        <transition dest="-1513741916" event="[cur_temperature &gt; lower_limit &amp;&amp; cur_temperature &lt; upper_limit]" id="1451008465" source="-747183443"/>
+        <transition dest="-1513741916" id="1751213107" source="961907429"/>
+        <transition dest="-1465556627" event="[~(cur_temperature = null)]" id="813287301" source="-1513741916"/>
+        <transition dest="961907429" id="1576493423" source="-1495286956"/>
+        <transition dest="-747183443" event="[valid data]" id="-1976874472" source="-1465556627"/>
+        <transition dest="1950768195" event="[cur_temperature&gt;upper_limit || cur_temperature &lt; lower_limit]" id="33534893" source="-747183443"/>
+        <transition dest="-747183443" event="~(cur_temperature = 0)" id="-1305147158" source="961907429"/>
+    </component>
+    <communicationchannel dest="1007339507" id="-574486868" name="linkinslk" source="-1428038840" type="sync"/>
+    <communicationchannel dest="1565048731" id="508021209" name="linkinslk" source="-416631022" type="sync"/>
+    <communicationchannel dest="-1556617558" id="715637894" name="linkinslk" source="572535544" type="sync"/>
+    <communicationchannel dest="-416631022" id="983883652" name="linkinslk" source="-1428038840" type="sync"/>
+    <communicationchannel dest="572535544" id="1330805022" name="linkinslk" source="-1556617558" type="sync"/>
+</system>

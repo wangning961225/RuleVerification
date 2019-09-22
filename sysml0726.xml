@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="isolette" wcet="15ms">
+    <component id="-2119927322" name="heatsource" type="device">
+        <linkpoint datatype="signal_heating" direction="in" id="-278496741" name="heating_in" period="3.0ms" protocol="TCP"/>
+        <exception fault="sysmlexception" id="4" name="HandwareFault"/>
+    </component>
+    <component id="-2085847356" name="设置温度范围子组件" type="rtos"/>
+    <component id="-933086591" name="操作接口" type="rtos"/>
+    <component id="-821357644" name="温度调节" type="rtos"/>
+    <component id="-713181286" name="控制热量产生" type="rtos"/>
+    <component id="-451972060" name="温度自动调节器" type="rtos"/>
+    <component id="-307893108" name="Real" type="rtos"/>
+    <component id="76886945" name="设置温度范围" type="rtos"/>
+    <component id="106146315" name="调节温度" type="rtos"/>
+    <component id="153953005" name="热源" type="rtos"/>
+    <component id="377498409" name="温度传感器" type="rtos"/>
+    <component id="400595356" name="报警" type="rtos"/>
+    <component id="420319231" name="设定温度范围" type="rtos"/>
+    <component id="511320734" name="数据处理子组件" type="rtos"/>
+    <component id="579525991" name="InvalidaParameter" type="rtos"/>
+    <component id="648844035" name="thermostat" type="rtos">
+        <linkpoint datatype="signal_curr_tem" direction="inout" id="-531050777" name="curr_tem_in" period="3.0ms" protocol="TCP"/>
+        <linkpoint datatype="operator_setting" direction="in" id="-164534687" name="设置接口_in" period="3.0ms" protocol="UDP"/>
+        <linkpoint datatype="signal_heating" direction="inout" id="1154767331" name="heating_out" period="3.0ms" protocol="TCP"/>
+        <linkpoint datatype="operator_feedback" direction="out" id="1911380519" name="operatorFeedback" period="4.0ms" protocol="UDP"/>
+        <exception fault="sysmlexception" id="11" name="Violation"/>
+        <exception fault="sysmlexception" id="12" name="InvalidaParameter"/>
+        <exception fault="sysmlexception" id="13" name="UnexceptedError"/>
+        <task id="-1371306913" name="operator_feedback" period="3.0ms"/>
+        <task id="-1221851716" name="数据处理" wcet="2.0ms">
+            <port direction="in" id="-1775269134" name="curr_tem_in"/>
+            <port direction="out" id="1744717029" name="curr_tem_out"/>
+            <task id="-1662459265" name="数据格式化" wcet="1.0ms"/>
+            <FaultTask id="725128806" name="FaultTask:InvalidaParameter"/>
+            <FaultTask id="1265227568" name="FaultTask:Violation" wcet="1.0ms"/>
+            <task id="1375606880" name="数据验证" wcet="1.0ms"/>
+            <FaultTask id="1872740039" name="FaultTask:UnexceptedError"/>
+        </task>
+        <task id="-964341759" name="feedback" wcet="1.0ms"/>
+        <task id="-714709711" name="operator_feedback" period="3.0ms"/>
+        <task id="-559763681" name="设置温度范围" wcet="1.0ms">
+            <port direction="in" id="-625290047" name="Port3"/>
+            <port direction="in" id="293191703" name="Port4"/>
+        </task>
+        <task id="209687951" name="温度调节" wcet="1.0ms">
+            <port direction="out" id="-651705455" name="heating_out"/>
+            <port direction="in" id="1273454769" name="curr_tem_in"/>
+        </task>
+        <task id="1572726846" name="处理器"/>
+    </component>
+    <component id="674177270" name="operator interface" type="rtos" wcet="2.0ms">
+        <linkpoint datatype="operator_setting" direction="in" id="-620578770" name="输入接口_in" period="3.0ms" protocol="TCP"/>
+        <linkpoint datatype="operator_setting" direction="out" id="-274749306" name="设置接口_out" period="3.0ms" protocol="UDP"/>
+        <linkpoint datatype="operator_feedback" direction="in" id="273364657" name="feedback接口_in" period="3.0ms" protocol="TCP"/>
+        <linkpoint datatype="operator_setting" direction="in" id="1240970219" name="显示接口_in" period="3.0ms" protocol="UDP"/>
+        <exception fault="sysmlexception" id="8" name="UnexceptedError"/>
+        <exception fault="sysmlexception" id="9" name="InvalidaParameter"/>
+        <exception fault="sysmlexception" id="10" name="Violation"/>
+        <task id="-2068137898" name="输入设置" wcet="1.0ms"/>
+        <task id="443511062" name="operator_setting" period="3.0ms"/>
+        <task id="818336398" name="显示" wcet="1.0ms"/>
+        <task id="1363097179" name="operator_setting" period="3.0ms"/>
+    </component>
+    <component id="904141872" name="检测环境温度" type="rtos"/>
+    <component id="917536755" name="feedback子组件" type="rtos"/>
+    <component id="948395987" name="temperatorsensor" type="device" wcet="1.0ms">
+        <linkpoint direction="inout" id="-1006930918" name="curr_tem_out"/>
+        <exception fault="sysmlexception" id="3" name="HandwareFault"/>
+        <task id="-1559631451" name="signal_curr_tem" period="3.0ms"/>
+    </component>
+    <component id="1010005930" name="alarm" type="rtos" wcet="4.0ms">
+        <linkpoint datatype="signal_curr_tem" direction="inout" id="-793872117" name="curr_tem_in" period="3.0ms" protocol="TCP"/>
+        <exception fault="sysmlexception" id="5" name="UnexceptedError"/>
+        <exception fault="sysmlexception" id="6" name="InvalidaParameter"/>
+        <exception fault="sysmlexception" id="7" name="Violation"/>
+        <task id="-1255749393" name="数据处理" wcet="2.0ms">
+            <port direction="in" id="380629946" name="curr_tem_in"/>
+            <port direction="out" id="1015845613" name="curr_tem_out"/>
+            <FaultTask id="-1374885627" name="FaultTask:UnexceptedError" wcet="1.0ms"/>
+            <task id="-431748368" name="数据格式化" wcet="1.0ms"/>
+            <task id="694213744" name="数据验证" wcet="1.0ms"/>
+            <FaultTask id="725217885" name="FaultTask:InvalidaParameter"/>
+            <FaultTask id="1737331048" name="FaultTask:Violation"/>
+        </task>
+        <task id="-1109852578" name="温度检测" wcet="2.0ms">
+            <port direction="in" id="-923404139" name="curr_tem_in"/>
+            <port direction="out" id="-158454332" name="ringring_out"/>
+        </task>
+        <task id="-893125622" name="发出警报" wcet="1.0ms">
+            <port direction="in" id="-923391412" name="curr_tem_in"/>
+        </task>
+        <task id="526065280" name="signal_ringring"/>
+    </component>
+    <component id="1053062980" name="UnexceptedError" type="rtos"/>
+    <component id="1066428139" name="feedback" type="rtos"/>
+    <component id="1087297388" name="温度调节子组件" type="rtos"/>
+    <component id="1547048553" name="alarm" type="rtos"/>
+    <component id="1631066988" name="HandwareFault" type="rtos"/>
+    <component id="1768732034" name="数据处理" type="rtos"/>
+    <component id="1887733171" name="Violation" type="rtos"/>
+    <communicationchannel dest="0" id="-1344458142" name="ItemFlow16" source="-158454332" type="sync"/>
+    <communicationchannel dest="-1775269134" id="-1244772589" name="ItemFlow74" source="-531050777" type="sync"/>
+    <communicationchannel dest="1911380519" id="-654045874" name="ItemFlow28" source="273364657" type="sync"/>
+    <communicationchannel dest="0" id="-620675158" name="ItemFlow18" source="-1006930918" type="sync"/>
+    <communicationchannel dest="0" id="-412737984" name="ItemFlow19" source="0" type="sync"/>
+    <communicationchannel dest="-278496741" id="-291362979" name="ItemFlow23" source="-651705455" type="sync"/>
+    <communicationchannel dest="0" id="-214930300" name="operator_setting" source="0" type="sync"/>
+    <communicationchannel dest="0" id="-127819218" name="ItemFlow15" source="1015845613" type="sync"/>
+    <communicationchannel dest="0" id="372519292" name="ItemFlow24" source="0" type="sync"/>
+    <communicationchannel dest="0" id="403425901" name="feedback" source="0" type="sync"/>
+    <communicationchannel dest="-793872117" id="935771281" name="ItemFlow17" source="0" type="sync"/>
+    <communicationchannel dest="-164534687" id="1232422310" name="ItemFlow27" source="-274749306" type="sync"/>
+    <communicationchannel dest="380629946" id="1688583960" name="ItemFlow14" source="0" type="sync"/>
+</system>
+
+<!--linkpoint和port的交互-->

@@ -16,7 +16,6 @@
             <port name="curr_tem_out" id="-1367014705" direction="out"/>
             <port name="curr_tem_in" id="-5856659" direction="in"/>
 
-
             <task Name="数据格式化" id="-1988126190" wcet="1.0ms"/>
             <task Name="数据验证" id="-305309700" wcet="1.0ms"/>
             <task Name="数据故障处理" id="983995970" wcet="1.0ms"/>
@@ -27,14 +26,21 @@
     <component name="温度调节子组件" id="-966202320" type="rtos"/>
     <component name="设定温度范围" id="-714523231" type="rtos"/>
     <component name="设置温度范围子组件" id="-631317113" type="rtos"/>
-    <component name="thermostat" id="-587841842" type="rtos">
+    <component name="thermostat" id="-587841842" type="rtos--">
         <linkpoint name="feedback接口_out" id="341749623" period="3.0ms" direction="in" datatype="operator_feedback"/>
+        <!--随便加的-->
+        <linkpoint name="Heat_Control" id="2222" period="3.0ms" direction="out" datatype="signal_curr_tem"/>
+
         <linkpoint name="curr_tem_in" id="835966014" period="3.0ms" direction="out" datatype="signal_curr_tem"/>
         <linkpoint name="设置接口_in" id="2005808910" period="3.0ms" direction="in" datatype="operator_setting"/>
+
         <exception name="InvalidParameter"/>
         <exception name="Violation"/>
         <exception name="UnexceptedError"/>
         <exception name="HandwareFault"/>
+        <faulttask Name="InvalidParameter故障处理" id="54329412" faulttype="InvalidParameter"/>
+
+        <faulttask Name="InvalidParameter故障处理" id="543294123" faulttype="Violation"/>
         <task Name="设置温度范围" id="-2027616755" wcet="1.0ms"/>
         <task Name="数据处理" id="-862602619" wcet="2.0ms">
             <port name="curr_tem_in" id="-274777224" direction="in"/>
@@ -69,6 +75,9 @@
         <task Name="operator_setting" id="-478204029" period="3.0ms"/>
         <task Name="operator_setting" id="-261542665" period="3.0ms"/>
         <task Name="输入设置" id="543294155" wcet="1.0ms"/>
+
+        <faulttask Name="InvalidParameter故障处理" id="54329412" faulttype="InvalidParameter"/>
+
     </component>
     <component name="heatsource" id="1212192976" type="device">
         <linkpoint name="heating_in" id="-658062935" period="3.0ms" direction="in" datatype="signal_heating"/>

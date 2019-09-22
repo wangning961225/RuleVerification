@@ -25,7 +25,6 @@ public class Component {
     	portList = new ArrayList<Port>();
     	connectionList = new ArrayList<Connection>();
     	channelList = new ArrayList<Channel>();
-
     	exceptionList = new HashMap<String, ExceptionXML>();
     	propagationList = new HashMap<String, Propagation>();
     }

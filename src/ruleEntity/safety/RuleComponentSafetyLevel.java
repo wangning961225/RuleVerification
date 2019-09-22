@@ -26,13 +26,13 @@ public class RuleComponentSafetyLevel {
                    if(componentName.equals(hashNew.get("name"))&&(!hashNew.get("class").equals("checkedComponent"))) {
                         if(!safetyLevel.equals(hashNew.get("safetyLevel"))){
                             System.out.println("组件"+componentName+"需求和设计间的安全级别不一致");
-//                            System.out.print(hashNew);
                         }
                     }
                 }
             }
         }
     }
+
     public static void main(String[] args){
         RuleComponentSafetyLevel.excute();
     }

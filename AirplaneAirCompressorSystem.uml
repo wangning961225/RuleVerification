@@ -1,0 +1,1772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AADLprofile="http:///schemas/AADLprofile/_GyZ2gHMPEemwm-55Pv0L_A/66" xmlns:Blocks="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Blocks" xmlns:DeprecatedElements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/DeprecatedElements" xmlns:PortsAndFlows="http://www.eclipse.org/papyrus/sysml/1.4/SysML/PortsAndFlows" xmlns:SafetyFailurecase="http:///schemas/SafetyFailurecase/_bhQKAHk3Eem7mJSeq9Mykw/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/AADLprofile/_GyZ2gHMPEemwm-55Pv0L_A/66 pathmap://resources/AADL_profile/AADLprofile.profile.uml#_GyevAHMPEemwm-55Pv0L_A http://www.eclipse.org/papyrus/sysml/1.4/SysML/Blocks http://www.eclipse.org/papyrus/sysml/1.4/SysML#//blocks http://www.eclipse.org/papyrus/sysml/1.4/SysML/DeprecatedElements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//deprecatedelements http://www.eclipse.org/papyrus/sysml/1.4/SysML/PortsAndFlows http://www.eclipse.org/papyrus/sysml/1.4/SysML#//portsandflows http:///schemas/SafetyFailurecase/_bhQKAHk3Eem7mJSeq9Mykw/2 ../SafetyFailureCase/SafetyFailureCase.profile.uml#_bhQxEHk3Eem7mJSeq9Mykw">
+  <uml:Model xmi:id="498805406" name="AirplaneAirCompressorSystem">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_UU4fUID0EeiaE5t4AlLGKA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_UVI-AID0EeiaE5t4AlLGKA">
+      <importedPackage xmi:type="uml:Package" href="pathmap://SysML14_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="447686897Base_types" name="Base_Types">
+      <packagedElement xmi:type="uml:Class" xmi:id="63272111TypeClass" name="Unsigned_8"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1154858971TypeClass" name="Boolean"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1902266780TypeClass" name="Integer_16"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1363814TypeClass" name="String"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1632249986TypeClass" name="Unsigned_64"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1594087015TypeClass" name="Unsigned_32"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1353417416TypeClass" name="Float"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="258171578TypeClass" name="Unsigned_16"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="549262689TypeClass" name="Float_32"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="263832604TypeClass" name="Integer"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1318889321TypeClass" name="Float_64"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="864788089TypeClass" name="Boolean"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="845652933TypeClass" name="Integer_8"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1280507059TypeClass" name="Character"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1213089121TypeClass" name="Integer_32"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1792823935TypeClass" name="Integer_64"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1458359437Package" name="Data_Types">
+      <packagedElement xmi:type="uml:Class" xmi:id="1588278149DataType" name="DebugSignalInstructions"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1588278149DataTypeImpl" name="DebugSignalInstructionsImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1588278149Realization" name="DebugSignalInstructionsRealization" client="1588278149DataTypeImpl" supplier="1588278149DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="313505743DataType" name="BITMessage"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="313505743DataTypeImpl" name="BITMessageImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="313505743Realization" name="BITMessageRealization" client="313505743DataTypeImpl" supplier="313505743DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="378904727DataType" name="SpinTransformAngleAndPosition"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="378904727DataTypeImpl" name="SpinTransformAngleAndPositionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="378904727Realization" name="SpinTransformAngleAndPositionRealization" client="378904727DataTypeImpl" supplier="378904727DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="372994653DataType" name="PWMwaveSignal"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="372994653DataTypeImpl" name="PWMwaveSignalImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="372994653Realization" name="PWMwaveSignalRealization" client="372994653DataTypeImpl" supplier="372994653DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="568818433DataType" name="SOVswitchControlSignal"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="568818433DataTypeImpl" name="SOVswitchControlSignalImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="568818433Realization" name="SOVswitchControlSignalRealization" client="568818433DataTypeImpl" supplier="568818433DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1853671488DataType" name="Heater1TurnOnSignal"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1853671488DataTypeImpl" name="Heater1TurnOnSignalImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1853671488Realization" name="Heater1TurnOnSignalRealization" client="1853671488DataTypeImpl" supplier="1853671488DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1881705411DataType" name="ACCStateMessage"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1881705411DataTypeImpl" name="ACCStateMessageImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1881705411Realization" name="ACCStateMessageRealization" client="1881705411DataTypeImpl" supplier="1881705411DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1275735611DataType" name="SOVtemperature"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1275735611DataTypeImpl" name="SOVtemperatureImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1275735611Realization" name="SOVtemperatureRealization" client="1275735611DataTypeImpl" supplier="1275735611DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1143877181DataType" name="SOVpressure"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1143877181DataTypeImpl" name="SOVpressureImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1143877181Realization" name="SOVpressureRealization" client="1143877181DataTypeImpl" supplier="1143877181DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="196002700DataType" name="CutOutputInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="196002700DataTypeImpl" name="CutOutputInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="196002700Realization" name="CutOutputInstructionRealization" client="196002700DataTypeImpl" supplier="196002700DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1948152025DataType" name="DegradeOutputInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1948152025DataTypeImpl" name="DegradeOutputInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1948152025Realization" name="DegradeOutputInstructionRealization" client="1948152025DataTypeImpl" supplier="1948152025DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1224790159DataType" name="KeepNormalOutputInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1224790159DataTypeImpl" name="KeepNormalOutputInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1224790159Realization" name="KeepNormalOutputInstructionRealization" client="1224790159DataTypeImpl" supplier="1224790159DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1549077637DataType" name="PowerupBITinstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1549077637DataTypeImpl" name="PowerupBITinstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1549077637Realization" name="PowerupBITinstructionRealization" client="1549077637DataTypeImpl" supplier="1549077637DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="702273878DataType" name="FilterLifeValue"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="702273878DataTypeImpl" name="FilterLifeValueImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="702273878Realization" name="FilterLifeValueRealization" client="702273878DataTypeImpl" supplier="702273878DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="121594025DataType" name="FilterCountValue"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="121594025DataTypeImpl" name="FilterCountValueImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="121594025Realization" name="FilterCountValueRealization" client="121594025DataTypeImpl" supplier="121594025DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="106406436DataType" name="VMCstateInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="106406436DataTypeImpl" name="VMCstateInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="106406436Realization" name="VMCstateInstructionRealization" client="106406436DataTypeImpl" supplier="106406436DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="305921638DataType" name="ElectricalMachineryEnableInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="305921638DataTypeImpl" name="ElectricalMachineryEnableInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="305921638Realization" name="ElectricalMachineryEnableInstructionRealization" client="305921638DataTypeImpl" supplier="305921638DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1418166393DataType" name="FaultClearInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1418166393DataTypeImpl" name="FaultClearInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1418166393Realization" name="FaultClearInstructionRealization" client="1418166393DataTypeImpl" supplier="1418166393DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="623569715DataType" name="MessageReadInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="623569715DataTypeImpl" name="MessageReadInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="623569715Realization" name="MessageReadInstructionRealization" client="623569715DataTypeImpl" supplier="623569715DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="769492386DataType" name="NormalRunInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="769492386DataTypeImpl" name="NormalRunInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="769492386Realization" name="NormalRunInstructionRealization" client="769492386DataTypeImpl" supplier="769492386DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="414489488DataType" name="ForceStopInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="414489488DataTypeImpl" name="ForceStopInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="414489488Realization" name="ForceStopInstructionRealization" client="414489488DataTypeImpl" supplier="414489488DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="20596778DataType" name="ChannelConfigInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="20596778DataTypeImpl" name="ChannelConfigInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="20596778Realization" name="ChannelConfigInstructionRealization" client="20596778DataTypeImpl" supplier="20596778DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="567512038DataType" name="HealthManageInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="567512038DataTypeImpl" name="HealthManageInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="567512038Realization" name="HealthManageInstructionRealization" client="567512038DataTypeImpl" supplier="567512038DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="867644489DataType" name="FaultType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="867644489DataTypeImpl" name="FaultTypeImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1761245629SubElement" name="type1" type="263832604TypeClass"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="867644489Realization" name="FaultTypeRealization" client="867644489DataTypeImpl" supplier="867644489DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1642640859DataType" name="ElectricalMachinery"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1642640859DataTypeImpl" name="ElectricalMachineryImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1642640859Realization" name="ElectricalMachineryRealization" client="1642640859DataTypeImpl" supplier="1642640859DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1515370970DataType" name="AirOutTemperature"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1515370970DataTypeImpl" name="AirOutTemperatureImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="282382107SubElement" name="Temp" type="263832604TypeClass"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1515370970Realization" name="AirOutTemperatureRealization" client="1515370970DataTypeImpl" supplier="1515370970DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="236683661DataType" name="ADDAchanelValid"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="236683661DataTypeImpl" name="ADDAchanelValidImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="236683661Realization" name="ADDAchanelValidRealization" client="236683661DataTypeImpl" supplier="236683661DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1014968518DataType" name="ACCinternalTemperature"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1014968518DataTypeImpl" name="ACCinternalTemperatureImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1014968518Realization" name="ACCinternalTemperatureRealization" client="1014968518DataTypeImpl" supplier="1014968518DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1079130052DataType" name="Current"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1079130052DataTypeImpl" name="CurrentImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1079130052Realization" name="CurrentRealization" client="1079130052DataTypeImpl" supplier="1079130052DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1556615069DataType" name="voltage"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1556615069DataTypeImpl" name="voltageImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1556615069Realization" name="voltageRealization" client="1556615069DataTypeImpl" supplier="1556615069DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1940800273DataType" name="ElectricPower"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1940800273DataTypeImpl" name="ElectricPowerImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1940800273Realization" name="ElectricPowerRealization" client="1940800273DataTypeImpl" supplier="1940800273DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1657047589DataType" name="FaultInfo"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1657047589DataTypeImpl" name="FaultInfoImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1657047589Realization" name="FaultInfoRealization" client="1657047589DataTypeImpl" supplier="1657047589DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1340671810DataType" name="PeriodicBITInfo"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1340671810DataTypeImpl" name="PeriodicBITInfoImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1340671810Realization" name="PeriodicBITInfoRealization" client="1340671810DataTypeImpl" supplier="1340671810DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="296463160DataType" name="AdjustRotationRateInstruction"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="296463160DataTypeImpl" name="AdjustRotationRateInstructionImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="296463160Realization" name="AdjustRotationRateInstructionRealization" client="296463160DataTypeImpl" supplier="296463160DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1417150609DataType" name="HeaterState"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1417150609DataTypeImpl" name="HeaterStateImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1474568346SubElement" name="isOpen" type="864788089TypeClass"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1417150609Realization" name="HeaterStateRealization" client="1417150609DataTypeImpl" supplier="1417150609DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1269092500DataType" name="Heater2TurnOnSignal"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1269092500DataTypeImpl" name="Heater2TurnOnSignalImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1269092500Realization" name="Heater2TurnOnSignalRealization" client="1269092500DataTypeImpl" supplier="1269092500DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1148547802DataType" name="Heater3TurnOnSignal"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1148547802DataTypeImpl" name="Heater3TurnOnSignalImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1148547802Realization" name="Heater3TurnOnSignalRealization" client="1148547802DataTypeImpl" supplier="1148547802DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="368773741DataType" name="Heater1TurnOffSignal"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="368773741DataTypeImpl" name="Heater1TurnOffSignalImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="368773741Realization" name="Heater1TurnOffSignalRealization" client="368773741DataTypeImpl" supplier="368773741DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="371308747DataType" name="Heater2TurnOffSignal"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="371308747DataTypeImpl" name="Heater2TurnOffSignalImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="371308747Realization" name="Heater2TurnOffSignalRealization" client="371308747DataTypeImpl" supplier="371308747DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="670638593DataType" name="Heater3TurnOffSignal"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="670638593DataTypeImpl" name="Heater3TurnOffSignalImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="670638593Realization" name="Heater3TurnOffSignalRealization" client="670638593DataTypeImpl" supplier="670638593DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1378387172DataType" name="PUBITInfo"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1378387172DataTypeImpl" name="PUBITInfoImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="544791331SubElement" name="isSevere" type="864788089TypeClass"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1378387172Realization" name="PUBITInfoRealization" client="1378387172DataTypeImpl" supplier="1378387172DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1911465505DataType" name="PowerSupply28V"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1911465505DataTypeImpl" name="PowerSupply28VImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1911465505Realization" name="PowerSupply28VRealization" client="1911465505DataTypeImpl" supplier="1911465505DataType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="835424619DataType" name="SystemStatus"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="835424619DataTypeImpl" name="SystemStatusImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1060507749SubElement" name="IsInHaltMode" type="864788089TypeClass"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="835424619Realization" name="SystemStatusRealization" client="835424619DataTypeImpl" supplier="835424619DataType"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1520006427Package" name="AirplaneAirCompressorSystem_one">
+      <packagedElement xmi:type="uml:Class" xmi:id="1520006427Class" name="AirplaneAirCompressorSystem">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1223599708property" name="InitializeFunction_init" visibility="public" type="1223599708Impl" aggregation="composite" association="1549321217association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="2035375637property" name="SupplyCurrentFunction_init" visibility="public" type="2035375637Impl" aggregation="composite" association="1628662513association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1223751644property" name="ControlFunction_init" visibility="public" type="1223751644Impl" aggregation="composite" association="1787844370association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="472420196property" name="SelfCheckFunction_init" visibility="public" type="472420196Impl" aggregation="composite" association="520146246association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="2037337224property" name="ModelManageFunction_init" visibility="public" type="2037337224Impl" aggregation="composite" association="1289924585association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1302985946property" name="FaultHandlingFunction_init" visibility="public" type="1302985946Impl" aggregation="composite" association="1443136712association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1236874983property" name="StorageFunction_init" visibility="public" type="1236874983Impl" aggregation="composite" association="1620847464association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1827795721property" name="InputFunction_init" visibility="public" type="1827795721Impl" aggregation="composite" association="2084256534association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1922192383property" name="OutputFunction_init" visibility="public" type="1922192383Impl" aggregation="composite" association="2056909485association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="1520006427Impl" name="AirplaneAirCompressorSystemImpl" classifierBehavior="1520006427Activity">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1223599708propertyImpl" name="InitializeFunction_init" type="1223599708Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="2035375637propertyImpl" name="SupplyCurrentFunction_init" type="2035375637Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1223751644propertyImpl" name="ControlFunction_init" type="1223751644Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="472420196propertyImpl" name="SelfCheckFunction_init" type="472420196Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="2037337224propertyImpl" name="ModelManageFunction_init" type="2037337224Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1302985946propertyImpl" name="FaultHandlingFunction_init" type="1302985946Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1236874983propertyImpl" name="StorageFunction_init" type="1236874983Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1827795721propertyImpl" name="InputFunction_init" type="1827795721Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1922192383propertyImpl" name="OutputFunction_init" type="1922192383Impl"/>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="578848399connector" name="ControlFunction_init_OutputFunction_init0">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1034427089end" partWithPort="1223751644property" role="153027368PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="789403770end" partWithPort="1922192383property" role="2091402088PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="232720790connector" name="ControlFunction_init_OutputFunction_init1">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1213484767end" partWithPort="1223751644property" role="1367251945PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="605596649end" partWithPort="1922192383property" role="954643571PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="493015381connector" name="ControlFunction_init_OutputFunction_init2">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="2093246195end" partWithPort="1223751644property" role="1045114212PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="891857793end" partWithPort="1922192383property" role="1128015400PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="620430118connector" name="ControlFunction_init_OutputFunction_init3">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1426047131end" partWithPort="1223751644property" role="966447085PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1157896651end" partWithPort="1922192383property" role="1500048200PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="912433711connector" name="ControlFunction_init_OutputFunction_init4">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1405960041end" partWithPort="1223751644property" role="224612032PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="783541913end" partWithPort="1922192383property" role="2042089497PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="1857389729connector" name="ControlFunction_init_OutputFunction_init5">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1594040512end" partWithPort="1223751644property" role="1907852674PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="870684569end" partWithPort="1922192383property" role="2122906398PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="870251224connector" name="ControlFunction_init_OutputFunction_init6">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="739830373end" partWithPort="1223751644property" role="1429709809PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="293309365end" partWithPort="1922192383property" role="1639315348PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="167114872connector" name="ControlFunction_init_OutputFunction_init7">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1151270096end" partWithPort="1223751644property" role="681645193PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="238100445end" partWithPort="1922192383property" role="1778170344PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="1239022850connector" name="FaultHandlingFunction_init_OutputFunction_init8">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1326504979end" partWithPort="1302985946property" role="778901167PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="677040013end" partWithPort="1922192383property" role="1438818145PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="324809496connector" name="InputFunction_init_ControlFunction_init9">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1837408345end" partWithPort="1827795721property" role="1444143813PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="614846444end" partWithPort="1223751644property" role="565938996PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="1761038348connector" name="InputFunction_init_ControlFunction_init10">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1655126097end" partWithPort="1827795721property" role="709647316PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="2020149665end" partWithPort="1223751644property" role="1754154262PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="550777128connector" name="InputFunction_init_ControlFunction_init11">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="272634002end" partWithPort="1827795721property" role="388802109PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="384862337end" partWithPort="1223751644property" role="211675617PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="2129836801connector" name="InputFunction_init_FaultHandlingFunction_init12">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1817477342end" partWithPort="1827795721property" role="789796651PortImpl"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="1154669435end" partWithPort="1302985946property" role="1398323836PortImpl"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="_iQK9IKuMEem3iZjFcC3cjg" name="Block24">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_iQLkMKuMEem3iZjFcC3cjg" partWithPort="1827795721propertyImpl" role="_-ulT8KuLEem3iZjFcC3cjg"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_iQLkMauMEem3iZjFcC3cjg" partWithPort="1223751644propertyImpl" role="_J0nNMKuMEem3iZjFcC3cjg"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="_jQE68KuMEem3iZjFcC3cjg" name="Block25">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_jQFiAKuMEem3iZjFcC3cjg" partWithPort="1223751644propertyImpl" role="_NhypkKuMEem3iZjFcC3cjg"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_jQFiAauMEem3iZjFcC3cjg" partWithPort="1922192383propertyImpl" role="_cWP8YKuMEem3iZjFcC3cjg"/>
+        </ownedConnector>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="1520006427Activity" name="AirplaneAirCompressorSystemActivity" node="InitialNode553094260 ActionNode805098675 ActionNode1041826374 ActionNode537072218 ActionNode1762857893 DecisionNode535705587 ActionNode841390494 MergeNode615311168 FinalNode522478257 ActionNode168807490 ActionNode2079352989 DecisionNode365922751 ActionNode321067249 ActionNode1740290827 ActionNode527860705 ActionNode1981641665 ActionNode2104629603 DecisionNode1336055589 ActionNode1684040891 MergeNode1127939750 ActionNode2046728333 ActionNode346697680 MergeNode612608140">
+          <ownedRule xmi:type="uml:Constraint" xmi:id="_k5NVwKupEem3iZjFcC3cjg" name="Constraint53" constrainedElement="ActionNode805098675">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_k5PyAKupEem3iZjFcC3cjg" name="constraintSpec">
+              <language>OCL</language>
+              <body>true</body>
+            </specification>
+          </ownedRule>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="832800984behavior" name="OpaqueBehavior"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="InitialNode553094260ActionNode805098675" name="InitialNode553094260ActionNode805098675" target="ActionNode805098675" source="InitialNode553094260"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode805098675ActionNode1041826374" name="ActionNode805098675ActionNode1041826374" target="ActionNode1041826374" source="ActionNode805098675"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1041826374ActionNode537072218" name="ActionNode1041826374ActionNode537072218" target="ActionNode537072218" source="ActionNode1041826374"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode537072218ActionNode1762857893" name="ActionNode537072218ActionNode1762857893" target="ActionNode1762857893" source="ActionNode537072218"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1762857893DecisionNode535705587" name="ActionNode1762857893DecisionNode535705587" target="DecisionNode535705587" source="ActionNode1762857893"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode535705587ActionNode841390494" name="DecisionNode535705587ActionNode841390494" target="ActionNode841390494" source="DecisionNode535705587">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode535705587ActionNode841390494OpaqueExpression">
+              <language>AADL</language>
+              <body>(PUBITInfo_variable.isSevere=true)</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode535705587ActionNode841390494Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode535705587ActionNode168807490" name="DecisionNode535705587ActionNode168807490" target="ActionNode168807490" source="DecisionNode535705587">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode535705587ActionNode168807490OpaqueExpression">
+              <language>AADL</language>
+              <body>not((PUBITInfo_variable.isSevere=true))</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode535705587ActionNode168807490Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode841390494MergeNode615311168" name="ActionNode841390494MergeNode615311168" target="MergeNode615311168" source="ActionNode841390494"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="MergeNode615311168FinalNode522478257" name="MergeNode615311168FinalNode522478257" target="FinalNode522478257" source="MergeNode615311168"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode168807490ActionNode2079352989" name="ActionNode168807490ActionNode2079352989" target="ActionNode2079352989" source="ActionNode168807490"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode2079352989DecisionNode365922751" name="ActionNode2079352989DecisionNode365922751" target="DecisionNode365922751" source="ActionNode2079352989"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode365922751ActionNode321067249" name="DecisionNode365922751ActionNode321067249" target="ActionNode321067249" source="DecisionNode365922751">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode365922751ActionNode321067249OpaqueExpression">
+              <language>AADL</language>
+              <body>(SystemStatus_variable.IsInHaltMode=false)</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode365922751ActionNode321067249Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode365922751MergeNode612608140" name="DecisionNode365922751MergeNode612608140" target="MergeNode612608140" source="DecisionNode365922751">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode365922751MergeNode612608140OpaqueExpression">
+              <language>AADL</language>
+              <body>not((SystemStatus_variable.IsInHaltMode=false))</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode365922751MergeNode612608140Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode321067249ActionNode1740290827" name="ActionNode321067249ActionNode1740290827" target="ActionNode1740290827" source="ActionNode321067249"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1740290827ActionNode527860705" name="ActionNode1740290827ActionNode527860705" target="ActionNode527860705" source="ActionNode1740290827"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode527860705ActionNode1981641665" name="ActionNode527860705ActionNode1981641665" target="ActionNode1981641665" source="ActionNode527860705"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1981641665ActionNode2104629603" name="ActionNode1981641665ActionNode2104629603" target="ActionNode2104629603" source="ActionNode1981641665"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode2104629603DecisionNode1336055589" name="ActionNode2104629603DecisionNode1336055589" target="DecisionNode1336055589" source="ActionNode2104629603"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1336055589ActionNode1684040891" name="DecisionNode1336055589ActionNode1684040891" target="ActionNode1684040891" source="DecisionNode1336055589">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1336055589ActionNode1684040891OpaqueExpression">
+              <language>AADL</language>
+              <body>(FaultType_variable.type1!=0)</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1336055589ActionNode1684040891Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1336055589MergeNode1127939750" name="DecisionNode1336055589MergeNode1127939750" target="MergeNode1127939750" source="DecisionNode1336055589">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1336055589MergeNode1127939750OpaqueExpression">
+              <language>AADL</language>
+              <body>not((FaultType_variable.type1!=0))</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1336055589MergeNode1127939750Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1684040891MergeNode1127939750" name="ActionNode1684040891MergeNode1127939750" target="MergeNode1127939750" source="ActionNode1684040891"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="MergeNode1127939750ActionNode2046728333" name="MergeNode1127939750ActionNode2046728333" target="ActionNode2046728333" source="MergeNode1127939750"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode2046728333ActionNode346697680" name="ActionNode2046728333ActionNode346697680" target="ActionNode346697680" source="ActionNode2046728333"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode346697680MergeNode612608140" name="ActionNode346697680MergeNode612608140" target="ActionNode2079352989" source="ActionNode346697680"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="MergeNode612608140MergeNode615311168" name="MergeNode612608140MergeNode615311168" target="MergeNode615311168" source="MergeNode612608140"/>
+          <variable xmi:type="uml:Variable" xmi:id="1332386271" name="PUBITInfo_variable" type="1378387172DataTypeImpl"/>
+          <variable xmi:type="uml:Variable" xmi:id="671621437" name="SystemStatus_variable" type="835424619DataTypeImpl"/>
+          <variable xmi:type="uml:Variable" xmi:id="633335361" name="FaultType_variable" type="867644489DataTypeImpl"/>
+          <node xmi:type="uml:InitialNode" xmi:id="InitialNode553094260" name="AirplaneAirCompressorSystem_InitialNode_1" outgoing="InitialNode553094260ActionNode805098675"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode805098675" name="AirplaneAirCompressorSystem_callInitialization_2" incoming="InitialNode553094260ActionNode805098675" outgoing="ActionNode805098675ActionNode1041826374" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1041826374" name="AirplaneAirCompressorSystem_callVMCInstructionInput_3" incoming="ActionNode805098675ActionNode1041826374" outgoing="ActionNode1041826374ActionNode537072218" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode537072218" name="AirplaneAirCompressorSystem_callSensorInput_4" incoming="ActionNode1041826374ActionNode537072218" outgoing="ActionNode537072218ActionNode1762857893" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1762857893" name="AirplaneAirCompressorSystem_callPUBIT_5" incoming="ActionNode537072218ActionNode1762857893" outgoing="ActionNode1762857893DecisionNode535705587" behavior="832800984behavior"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="DecisionNode535705587" name="AirplaneAirCompressorSystem_DecisionNode_6" incoming="ActionNode1762857893DecisionNode535705587" outgoing="DecisionNode535705587ActionNode841390494 DecisionNode535705587ActionNode168807490"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode841390494" name="AirplaneAirCompressorSystem_callOutputPUBITToVMC_7" incoming="DecisionNode535705587ActionNode841390494" outgoing="ActionNode841390494MergeNode615311168" behavior="832800984behavior"/>
+          <node xmi:type="uml:MergeNode" xmi:id="MergeNode615311168" name="AirplaneAirCompressorSystem_MergeNode_27" incoming="ActionNode841390494MergeNode615311168 MergeNode612608140MergeNode615311168" outgoing="MergeNode615311168FinalNode522478257"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="FinalNode522478257" name="AirplaneAirCompressorSystem_FinalNode_28" incoming="MergeNode615311168FinalNode522478257"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode168807490" name="AirplaneAirCompressorSystem_callOutputPUBITToVMC_10" incoming="DecisionNode535705587ActionNode168807490" outgoing="ActionNode168807490ActionNode2079352989" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode2079352989" name="AirplaneAirCompressorSystem_callVMCInstructionInput_11" incoming="ActionNode168807490ActionNode2079352989 ActionNode346697680MergeNode612608140" outgoing="ActionNode2079352989DecisionNode365922751" behavior="832800984behavior"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="DecisionNode365922751" name="AirplaneAirCompressorSystem_DecisionNode_12" incoming="ActionNode2079352989DecisionNode365922751" outgoing="DecisionNode365922751ActionNode321067249 DecisionNode365922751MergeNode612608140"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode321067249" name="AirplaneAirCompressorSystem_callModelManageFunction_13" incoming="DecisionNode365922751ActionNode321067249" outgoing="ActionNode321067249ActionNode1740290827" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1740290827" name="AirplaneAirCompressorSystem_callControlFunction_14" incoming="ActionNode321067249ActionNode1740290827" outgoing="ActionNode1740290827ActionNode527860705" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode527860705" name="AirplaneAirCompressorSystem_callOutputFunction_15" incoming="ActionNode1740290827ActionNode527860705" outgoing="ActionNode527860705ActionNode1981641665" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1981641665" name="AirplaneAirCompressorSystem_callPeriodicBIT_16" incoming="ActionNode527860705ActionNode1981641665" outgoing="ActionNode1981641665ActionNode2104629603" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode2104629603" name="AirplaneAirCompressorSystem_callStorageFunction_17" incoming="ActionNode1981641665ActionNode2104629603" outgoing="ActionNode2104629603DecisionNode1336055589" behavior="832800984behavior"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="DecisionNode1336055589" name="AirplaneAirCompressorSystem_DecisionNode_18" incoming="ActionNode2104629603DecisionNode1336055589" outgoing="DecisionNode1336055589ActionNode1684040891 DecisionNode1336055589MergeNode1127939750"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1684040891" name="AirplaneAirCompressorSystem_callFaultHandling_19" incoming="DecisionNode1336055589ActionNode1684040891" outgoing="ActionNode1684040891MergeNode1127939750" behavior="832800984behavior"/>
+          <node xmi:type="uml:MergeNode" xmi:id="MergeNode1127939750" name="AirplaneAirCompressorSystem_MergeNode_23" incoming="ActionNode1684040891MergeNode1127939750 DecisionNode1336055589MergeNode1127939750" outgoing="MergeNode1127939750ActionNode2046728333"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode2046728333" name="AirplaneAirCompressorSystem_callOutputPeriodBITToVMC_24" incoming="MergeNode1127939750ActionNode2046728333" outgoing="ActionNode2046728333ActionNode346697680" behavior="832800984behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode346697680" name="AirplaneAirCompressorSystem_JumpNode_25" incoming="ActionNode2046728333ActionNode346697680" outgoing="ActionNode346697680MergeNode612608140" behavior="832800984behavior"/>
+          <node xmi:type="uml:MergeNode" xmi:id="MergeNode612608140" name="AirplaneAirCompressorSystem_MergeNode_26" incoming="DecisionNode365922751MergeNode612608140" outgoing="MergeNode612608140MergeNode615311168"/>
+        </ownedBehavior>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1549321217association" memberEnd="1223599708property 771344368ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="771344368ownedEnd" type="1520006427Impl" association="1549321217association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1628662513association" memberEnd="2035375637property 597292035ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="597292035ownedEnd" type="1520006427Impl" association="1628662513association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1787844370association" memberEnd="1223751644property 363657867ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="363657867ownedEnd" type="1520006427Impl" association="1787844370association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="520146246association" memberEnd="472420196property 1685115092ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1685115092ownedEnd" type="1520006427Impl" association="520146246association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1289924585association" memberEnd="2037337224property 168023903ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="168023903ownedEnd" type="1520006427Impl" association="1289924585association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1443136712association" memberEnd="1302985946property 2135383830ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="2135383830ownedEnd" type="1520006427Impl" association="1443136712association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1620847464association" memberEnd="1236874983property 1511943030ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1511943030ownedEnd" type="1520006427Impl" association="1620847464association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="2084256534association" memberEnd="1827795721property 1482778565ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1482778565ownedEnd" type="1520006427Impl" association="2084256534association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="2056909485association" memberEnd="1922192383property 461276290ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="461276290ownedEnd" type="1520006427Impl" association="2056909485association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1520006427Realization" name="AirplaneAirCompressorSystemRealization" client="1520006427Impl" supplier="1520006427Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1223599708Package" name="InitializeFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1223599708Class" name="InitializeFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1873849459property" name="SoftwareInitialize_init" visibility="public" type="1873849459Impl" aggregation="composite" association="244985976association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="582003800property" name="ProjectConfigFunction_init" visibility="public" type="582003800Impl" aggregation="composite" association="183121162association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1057705260property" name="HardwareInitialize_init" visibility="public" type="1057705260Impl" aggregation="composite" association="381033974association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="1223599708Impl" name="InitializeFunction_initImpl" classifierBehavior="1223599708Activity">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1873849459propertyImpl" name="SoftwareInitialize_init" type="1873849459Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="582003800propertyImpl" name="ProjectConfigFunction_init" type="582003800Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1057705260propertyImpl" name="HardwareInitialize_init" type="1057705260Impl"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="1223599708Activity" name="InitializeFunction_initActivity" node="InitialNode1130590737 ActionNode1724319027 ActionNode874255251 ActionNode1770557458 ActionNode934870669 ActionNode1676473186 FinalNode1376270427">
+          <ownedRule xmi:type="uml:Constraint" xmi:id="_Yn-34KutEem3iZjFcC3cjg" name="Constraint15" constrainedElement="ActionNode874255251">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_YoAGAKutEem3iZjFcC3cjg" name="constraintSpec">
+              <language>OCL</language>
+              <body>true</body>
+            </specification>
+          </ownedRule>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="2132106966behavior" name="OpaqueBehavior"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="InitialNode1130590737ActionNode1724319027" name="InitialNode1130590737ActionNode1724319027" target="ActionNode1724319027" source="InitialNode1130590737"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1724319027ActionNode874255251" name="ActionNode1724319027ActionNode874255251" target="ActionNode874255251" source="ActionNode1724319027"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode874255251ActionNode1770557458" name="ActionNode874255251ActionNode1770557458" target="ActionNode1770557458" source="ActionNode874255251"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1770557458ActionNode934870669" name="ActionNode1770557458ActionNode934870669" target="ActionNode934870669" source="ActionNode1770557458"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode934870669ActionNode1676473186" name="ActionNode934870669ActionNode1676473186" target="ActionNode1676473186" source="ActionNode934870669"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1676473186FinalNode1376270427" name="ActionNode1676473186FinalNode1376270427" target="FinalNode1376270427" source="ActionNode1676473186"/>
+          <node xmi:type="uml:InitialNode" xmi:id="InitialNode1130590737" name="InitializeFunction_init_InitialNode_1" outgoing="InitialNode1130590737ActionNode1724319027"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1724319027" name="InitializeFunction_init_callHardwareInitialize_2" incoming="InitialNode1130590737ActionNode1724319027" outgoing="ActionNode1724319027ActionNode874255251" behavior="2132106966behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode874255251" name="InitializeFunction_init_callADInitialize_3" incoming="ActionNode1724319027ActionNode874255251" outgoing="ActionNode874255251ActionNode1770557458" behavior="2132106966behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1770557458" name="InitializeFunction_init_callTimerInitialize_4" incoming="ActionNode874255251ActionNode1770557458" outgoing="ActionNode1770557458ActionNode934870669" behavior="2132106966behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode934870669" name="InitializeFunction_init_callInterruptionInitialize_5" incoming="ActionNode1770557458ActionNode934870669" outgoing="ActionNode934870669ActionNode1676473186" behavior="2132106966behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1676473186" name="InitializeFunction_init_callProjectConfigurationJudge_6" incoming="ActionNode934870669ActionNode1676473186" outgoing="ActionNode1676473186FinalNode1376270427" behavior="2132106966behavior"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="FinalNode1376270427" name="InitializeFunction_init_FinalNode_7" incoming="ActionNode1676473186FinalNode1376270427"/>
+        </ownedBehavior>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="244985976association" memberEnd="1873849459property 1785079129ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1785079129ownedEnd" type="1223599708Impl" association="244985976association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="183121162association" memberEnd="582003800property 1129730659ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1129730659ownedEnd" type="1223599708Impl" association="183121162association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="381033974association" memberEnd="1057705260property 437523958ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="437523958ownedEnd" type="1223599708Impl" association="381033974association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1223599708Realization" name="InitializeFunction_initRealization" client="1223599708Impl" supplier="1223599708Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="2035375637Package" name="SupplyCurrentFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="2035375637Class" name="SupplyCurrentFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1227076739property" name="ACCSupplyCurrent_init" visibility="public" type="1227076739Impl" aggregation="composite" association="423732796association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1135024248property" name="RIUSupplyCurrent_init" visibility="public" type="1135024248Impl" aggregation="composite" association="1153725634association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="2035375637Impl" name="SupplyCurrentFunction_initImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1227076739propertyImpl" name="ACCSupplyCurrent_init" type="1227076739Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1135024248propertyImpl" name="RIUSupplyCurrent_init" type="1135024248Impl"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="423732796association" memberEnd="1227076739property 582901880ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="582901880ownedEnd" type="2035375637Impl" association="423732796association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1153725634association" memberEnd="1135024248property 1748788936ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1748788936ownedEnd" type="2035375637Impl" association="1153725634association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="2035375637Realization" name="SupplyCurrentFunction_initRealization" client="2035375637Impl" supplier="2035375637Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1223751644Package" name="ControlFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1223751644Class" name="ControlFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="631724840property" name="ElectroMechanicalControl_init" visibility="public" type="631724840Impl" aggregation="composite" association="1197546848association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1716842797property" name="SOVcontrol_init" visibility="public" type="1716842797Impl" aggregation="composite" association="1777582382association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1416744866property" name="HeaterControl_init" visibility="public" type="1416744866Impl" aggregation="composite" association="1851665341association"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="565938996Port" name="SOVtemperature" visibility="public" type="1275735611DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1754154262Port" name="SOVpressure" visibility="public" type="1143877181DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="211675617Port" name="AirOutTemperature" visibility="public" type="1515370970DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="153027368Port" name="PWMwaveSignal" visibility="public" type="372994653DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1367251945Port" name="SOVswitchControlSignal" visibility="public" type="568818433DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1045114212Port" name="Heater1TurnOnSignal" visibility="public" type="1853671488DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="966447085Port" name="Heater2TurnOnSignal" visibility="public" type="1269092500DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="224612032Port" name="Heater3TurnOnSignal" visibility="public" type="1148547802DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1907852674Port" name="Heater1TurnOffSignal" visibility="public" type="368773741DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1429709809Port" name="Heater2TurnOffSignal" visibility="public" type="371308747DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="681645193Port" name="Heater3TurnOffSignal" visibility="public" type="670638593DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_HWqkEKuMEem3iZjFcC3cjg" name="con_rt_in" visibility="public" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_K3wsQKuMEem3iZjFcC3cjg" name="con_rt_out" visibility="public" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="1223751644Impl" name="ControlFunction_initImpl" classifierBehavior="1223751644Activity">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="631724840propertyImpl" name="ElectroMechanicalControl_init" type="631724840Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1716842797propertyImpl" name="SOVcontrol_init" type="1716842797Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1416744866propertyImpl" name="HeaterControl_init" type="1416744866Impl"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="565938996PortImpl" name="SOVtemperature" visibility="public" type="1275735611DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1754154262PortImpl" name="SOVpressure" visibility="public" type="1143877181DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="211675617PortImpl" name="AirOutTemperature" visibility="public" type="1515370970DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="153027368PortImpl" name="PWMwaveSignal" visibility="public" type="372994653DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1367251945PortImpl" name="SOVswitchControlSignal" visibility="public" type="568818433DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1045114212PortImpl" name="Heater1TurnOnSignal" visibility="public" type="1853671488DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="966447085PortImpl" name="Heater2TurnOnSignal" visibility="public" type="1269092500DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="224612032PortImpl" name="Heater3TurnOnSignal" visibility="public" type="1148547802DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1907852674PortImpl" name="Heater1TurnOffSignal" visibility="public" type="368773741DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1429709809PortImpl" name="Heater2TurnOffSignal" visibility="public" type="371308747DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="681645193PortImpl" name="Heater3TurnOffSignal" visibility="public" type="670638593DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_J0nNMKuMEem3iZjFcC3cjg" name="con_rt_in" visibility="public" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_NhypkKuMEem3iZjFcC3cjg" name="con_rt_out" visibility="public" aggregation="composite"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="1223751644Activity" name="ControlFunction_initActivity" node="InitialNode924184748 DecisionNode1064984773 DecisionNode1908513854 DecisionNode1308060619 ActionNode1644032825 ActionNode233687947 ActionNode107938458 DecisionNode1800891997 DecisionNode522245877 ActionNode1139337949 ActionNode329073019 ActionNode1075730476 MergeNode702009058 MergeNode83018325 ActionNode706447630 FinalNode1491209569 DecisionNode1629842521 ActionNode2077677515 ActionNode430150892 ActionNode1149316917 MergeNode1024252592">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="1882228324behavior" name="OpaqueBehavior"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="InitialNode924184748DecisionNode1064984773" name="InitialNode924184748DecisionNode1064984773" target="DecisionNode1064984773" source="InitialNode924184748"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1064984773DecisionNode1908513854" name="DecisionNode1064984773DecisionNode1908513854" target="DecisionNode1908513854" source="DecisionNode1064984773">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1064984773DecisionNode1908513854OpaqueExpression">
+              <language>AADL</language>
+              <body>SOVtemperature</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1064984773DecisionNode1908513854Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1908513854DecisionNode1308060619" name="DecisionNode1908513854DecisionNode1308060619" target="DecisionNode1308060619" source="DecisionNode1908513854">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1908513854DecisionNode1308060619OpaqueExpression">
+              <language>AADL</language>
+              <body>AirOutTemperature</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1908513854DecisionNode1308060619Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1308060619ActionNode1644032825" name="DecisionNode1308060619ActionNode1644032825" target="ActionNode1644032825" source="DecisionNode1308060619">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1308060619ActionNode1644032825OpaqueExpression">
+              <language>AADL</language>
+              <body>SOVpressure</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1308060619ActionNode1644032825Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1644032825ActionNode233687947" name="ActionNode1644032825ActionNode233687947" target="ActionNode233687947InputPin" source="ActionNode1644032825"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode233687947ActionNode107938458" name="ActionNode233687947ActionNode107938458" target="ActionNode107938458" source="ActionNode233687947"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode107938458DecisionNode1800891997" name="ActionNode107938458DecisionNode1800891997" target="DecisionNode1800891997" source="ActionNode107938458"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1800891997DecisionNode522245877" name="DecisionNode1800891997DecisionNode522245877" target="DecisionNode522245877" source="DecisionNode1800891997">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1800891997DecisionNode522245877OpaqueExpression">
+              <language>AADL</language>
+              <body>(AirOutTemperature_variable.Temp&lt;15)</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1800891997DecisionNode522245877Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1800891997DecisionNode1629842521" name="DecisionNode1800891997DecisionNode1629842521" target="DecisionNode1629842521" source="DecisionNode1800891997">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1800891997DecisionNode1629842521OpaqueExpression">
+              <language>AADL</language>
+              <body>not((AirOutTemperature_variable.Temp&lt;15))</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1800891997DecisionNode1629842521Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode522245877ActionNode1139337949" name="DecisionNode522245877ActionNode1139337949" target="ActionNode1139337949InputPin" source="DecisionNode522245877">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode522245877ActionNode1139337949OpaqueExpression">
+              <language>AADL</language>
+              <body>(AirOutTemperature_variable.Temp&lt;4)and(HeaterState_variable.isOpen!=true)</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode522245877ActionNode1139337949Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode522245877MergeNode702009058" name="DecisionNode522245877MergeNode702009058" target="MergeNode702009058" source="DecisionNode522245877">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode522245877MergeNode702009058OpaqueExpression">
+              <language>AADL</language>
+              <body>not((AirOutTemperature_variable.Temp&lt;4)and(HeaterState_variable.isOpen!=true))</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode522245877MergeNode702009058Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1139337949ActionNode329073019" name="ActionNode1139337949ActionNode329073019" target="ActionNode329073019InputPin" source="ActionNode1139337949"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode329073019ActionNode1075730476" name="ActionNode329073019ActionNode1075730476" target="ActionNode1075730476InputPin" source="ActionNode329073019"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1075730476MergeNode702009058" name="ActionNode1075730476MergeNode702009058" target="MergeNode702009058" source="ActionNode1075730476"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="MergeNode702009058MergeNode83018325" name="MergeNode702009058MergeNode83018325" target="MergeNode83018325" source="MergeNode702009058"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="MergeNode83018325ActionNode706447630" name="MergeNode83018325ActionNode706447630" target="ActionNode706447630InputPin" source="MergeNode83018325"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode706447630FinalNode1491209569" name="ActionNode706447630FinalNode1491209569" target="FinalNode1491209569" source="ActionNode706447630"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1629842521ActionNode2077677515" name="DecisionNode1629842521ActionNode2077677515" target="ActionNode2077677515InputPin" source="DecisionNode1629842521">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1629842521ActionNode2077677515OpaqueExpression">
+              <language>AADL</language>
+              <body>(HeaterState_variable.isOpen=true)</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1629842521ActionNode2077677515Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1629842521MergeNode1024252592" name="DecisionNode1629842521MergeNode1024252592" target="MergeNode1024252592" source="DecisionNode1629842521">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1629842521MergeNode1024252592OpaqueExpression">
+              <language>AADL</language>
+              <body>not((HeaterState_variable.isOpen=true))</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1629842521MergeNode1024252592Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode2077677515ActionNode430150892" name="ActionNode2077677515ActionNode430150892" target="ActionNode430150892InputPin" source="ActionNode2077677515"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode430150892ActionNode1149316917" name="ActionNode430150892ActionNode1149316917" target="ActionNode1149316917InputPin" source="ActionNode430150892"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1149316917MergeNode1024252592" name="ActionNode1149316917MergeNode1024252592" target="MergeNode1024252592" source="ActionNode1149316917"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="MergeNode1024252592MergeNode83018325" name="MergeNode1024252592MergeNode83018325" target="MergeNode83018325" source="MergeNode1024252592"/>
+          <variable xmi:type="uml:Variable" xmi:id="1385470515" name="AirOutTemperature_variable" type="1515370970DataTypeImpl"/>
+          <variable xmi:type="uml:Variable" xmi:id="522321875" name="HeaterState_variable" type="1417150609DataTypeImpl"/>
+          <variable xmi:type="uml:Variable" xmi:id="816645918" name="SOVpressure_variable" type="1143877181DataTypeImpl"/>
+          <variable xmi:type="uml:Variable" xmi:id="354640671" name="SOVtemperature_variable" type="1275735611DataTypeImpl"/>
+          <node xmi:type="uml:InitialNode" xmi:id="InitialNode924184748" name="ControlFunction_init_InitialNode_1" outgoing="InitialNode924184748DecisionNode1064984773"/>
+          <node xmi:type="uml:AcceptEventAction" xmi:id="DecisionNode1064984773" name="ControlFunction_init_accept_SOVtemperature_2" incoming="InitialNode924184748DecisionNode1064984773" outgoing="DecisionNode1064984773DecisionNode1908513854"/>
+          <node xmi:type="uml:AcceptEventAction" xmi:id="DecisionNode1908513854" name="ControlFunction_init_accept_AirOutTemperature_3" incoming="DecisionNode1064984773DecisionNode1908513854" outgoing="DecisionNode1908513854DecisionNode1308060619"/>
+          <node xmi:type="uml:AcceptEventAction" xmi:id="DecisionNode1308060619" name="ControlFunction_init_accept_SOVpressure_4" incoming="DecisionNode1908513854DecisionNode1308060619" outgoing="DecisionNode1308060619ActionNode1644032825"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1644032825" name="ControlFunction_init_callComputePWM_5" incoming="DecisionNode1308060619ActionNode1644032825" outgoing="ActionNode1644032825ActionNode233687947" behavior="1882228324behavior"/>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode233687947" name="ControlFunction_init_sendPWMwaveSignal_6" outgoing="ActionNode233687947ActionNode107938458" signal="142957909Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode233687947InputPin" name="target" incoming="ActionNode1644032825ActionNode233687947">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode233687947lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode233687947upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode107938458" name="ControlFunction_init_callChooseSOVSignal_7" incoming="ActionNode233687947ActionNode107938458" outgoing="ActionNode107938458DecisionNode1800891997" behavior="1882228324behavior"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="DecisionNode1800891997" name="ControlFunction_init_DecisionNode_8" incoming="ActionNode107938458DecisionNode1800891997" outgoing="DecisionNode1800891997DecisionNode522245877 DecisionNode1800891997DecisionNode1629842521"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="DecisionNode522245877" name="ControlFunction_init_DecisionNode_9" incoming="DecisionNode1800891997DecisionNode522245877" outgoing="DecisionNode522245877ActionNode1139337949 DecisionNode522245877MergeNode702009058"/>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode1139337949" name="ControlFunction_init_sendHeater1TurnOnSignal_10" outgoing="ActionNode1139337949ActionNode329073019" signal="177449603Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode1139337949InputPin" name="target" incoming="DecisionNode522245877ActionNode1139337949">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode1139337949lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode1139337949upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode329073019" name="ControlFunction_init_sendHeater2TurnOnSignal_11" outgoing="ActionNode329073019ActionNode1075730476" signal="1151659248Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode329073019InputPin" name="target" incoming="ActionNode1139337949ActionNode329073019">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode329073019lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode329073019upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode1075730476" name="ControlFunction_init_sendHeater3TurnOnSignal_12" outgoing="ActionNode1075730476MergeNode702009058" signal="1036774278Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode1075730476InputPin" name="target" incoming="ActionNode329073019ActionNode1075730476">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode1075730476lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode1075730476upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:MergeNode" xmi:id="MergeNode702009058" name="ControlFunction_init_MergeNode_17" incoming="ActionNode1075730476MergeNode702009058 DecisionNode522245877MergeNode702009058" outgoing="MergeNode702009058MergeNode83018325"/>
+          <node xmi:type="uml:MergeNode" xmi:id="MergeNode83018325" name="ControlFunction_init_MergeNode_30" incoming="MergeNode702009058MergeNode83018325 MergeNode1024252592MergeNode83018325" outgoing="MergeNode83018325ActionNode706447630"/>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode706447630" name="ControlFunction_init_sendSOVswitchControlSignal_31" outgoing="ActionNode706447630FinalNode1491209569" signal="410418009Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode706447630InputPin" name="target" incoming="MergeNode83018325ActionNode706447630">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode706447630lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode706447630upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="FinalNode1491209569" name="ControlFunction_init_FinalNode_32" incoming="ActionNode706447630FinalNode1491209569"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="DecisionNode1629842521" name="ControlFunction_init_DecisionNode_21" incoming="DecisionNode1800891997DecisionNode1629842521" outgoing="DecisionNode1629842521ActionNode2077677515 DecisionNode1629842521MergeNode1024252592"/>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode2077677515" name="ControlFunction_init_sendHeater1TurnOffSignal_22" outgoing="ActionNode2077677515ActionNode430150892" signal="1871064367Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode2077677515InputPin" name="target" incoming="DecisionNode1629842521ActionNode2077677515">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode2077677515lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode2077677515upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode430150892" name="ControlFunction_init_sendHeater2TurnOffSignal_23" outgoing="ActionNode430150892ActionNode1149316917" signal="153403617Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode430150892InputPin" name="target" incoming="ActionNode2077677515ActionNode430150892">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode430150892lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode430150892upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode1149316917" name="ControlFunction_init_sendHeater3TurnOffSignal_24" outgoing="ActionNode1149316917MergeNode1024252592" signal="212148701Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode1149316917InputPin" name="target" incoming="ActionNode430150892ActionNode1149316917">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode1149316917lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode1149316917upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:MergeNode" xmi:id="MergeNode1024252592" name="ControlFunction_init_MergeNode_29" incoming="ActionNode1149316917MergeNode1024252592 DecisionNode1629842521MergeNode1024252592" outgoing="MergeNode1024252592MergeNode83018325"/>
+        </ownedBehavior>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Signal" xmi:id="142957909Signal" name="142957909Signal"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="177449603Signal" name="177449603Signal"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="1151659248Signal" name="1151659248Signal"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="1036774278Signal" name="1036774278Signal"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="410418009Signal" name="410418009Signal"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="1871064367Signal" name="1871064367Signal"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="153403617Signal" name="153403617Signal"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="212148701Signal" name="212148701Signal"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="1197546848association" memberEnd="631724840property 1218685602ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1218685602ownedEnd" type="1223751644Impl" association="1197546848association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1777582382association" memberEnd="1716842797property 470099474ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="470099474ownedEnd" type="1223751644Impl" association="1777582382association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1851665341association" memberEnd="1416744866property 2098595603ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="2098595603ownedEnd" type="1223751644Impl" association="1851665341association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1223751644Realization" name="ControlFunction_initRealization" client="1223751644Impl" supplier="1223751644Class"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_gHinQKuNEem3iZjFcC3cjg" name="ItemFlow15" informationSource="_J0nNMKuMEem3iZjFcC3cjg" informationTarget="_NhypkKuMEem3iZjFcC3cjg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="472420196Package" name="SelfCheckFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="472420196Class" name="SelfCheckFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="582378480property" name="PUBIT_init" visibility="public" type="582378480Impl" aggregation="composite" association="407452197association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1200591243property" name="PeriodicBIT_init" visibility="public" type="1200591243Impl" aggregation="composite" association="723319556association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="472420196Impl" name="SelfCheckFunction_initImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="582378480propertyImpl" name="PUBIT_init" type="582378480Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1200591243propertyImpl" name="PeriodicBIT_init" type="1200591243Impl"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="407452197association" memberEnd="582378480property 1309407480ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1309407480ownedEnd" type="472420196Impl" association="407452197association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="723319556association" memberEnd="1200591243property 1103037563ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1103037563ownedEnd" type="472420196Impl" association="723319556association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="472420196Realization" name="SelfCheckFunction_initRealization" client="472420196Impl" supplier="472420196Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="2037337224Package" name="ModelManageFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="2037337224Class" name="ModelManageFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1135685652property" name="ModelConvert_init" visibility="public" type="1135685652Impl" aggregation="composite" association="1056546306association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="2037337224Impl" name="ModelManageFunction_initImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1135685652propertyImpl" name="ModelConvert_init" type="1135685652Impl"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1056546306association" memberEnd="1135685652property 923523805ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="923523805ownedEnd" type="2037337224Impl" association="1056546306association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="2037337224Realization" name="ModelManageFunction_initRealization" client="2037337224Impl" supplier="2037337224Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1302985946Package" name="FaultHandlingFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1302985946Class" name="FaultHandlingFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1391039623property" name="Type1FaultHandling_init" visibility="public" type="1391039623Impl" aggregation="composite" association="1118894363association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="666533401property" name="Type2FaultHandling_init" visibility="public" type="666533401Impl" aggregation="composite" association="648350386association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1647559005property" name="Type3FaultHandling_init" visibility="public" type="1647559005Impl" aggregation="composite" association="1441534630association"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1398323836Port" name="FaultInfo" visibility="public" type="1657047589DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="778901167Port" name="PeriodicBITInfo" visibility="public" type="1340671810DataTypeImpl" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="1302985946Impl" name="FaultHandlingFunction_initImpl" classifierBehavior="1302985946Activity">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1391039623propertyImpl" name="Type1FaultHandling_init" type="1391039623Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="666533401propertyImpl" name="Type2FaultHandling_init" type="666533401Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1647559005propertyImpl" name="Type3FaultHandling_init" type="1647559005Impl"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1398323836PortImpl" name="FaultInfo" visibility="public" type="1657047589DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="778901167PortImpl" name="PeriodicBITInfo" visibility="public" type="1340671810DataTypeImpl" aggregation="composite"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="1302985946Activity" name="FaultHandlingFunction_initActivity" node="InitialNode307786733 DecisionNode918766454 DecisionNode306408897 ActionNode88228198 ActionNode1908211552 MergeNode1343280548 ActionNode1875283703 FinalNode10287197 DecisionNode1565056844 ActionNode1656633582 ActionNode79617600 MergeNode1202168684 ActionNode1599361643">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="2023274995behavior" name="OpaqueBehavior"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="InitialNode307786733DecisionNode918766454" name="InitialNode307786733DecisionNode918766454" target="DecisionNode918766454" source="InitialNode307786733"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode918766454DecisionNode306408897" name="DecisionNode918766454DecisionNode306408897" target="DecisionNode306408897" source="DecisionNode918766454">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode918766454DecisionNode306408897OpaqueExpression">
+              <language>AADL</language>
+              <body>FaultInfo</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode918766454DecisionNode306408897Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode306408897ActionNode88228198" name="DecisionNode306408897ActionNode88228198" target="ActionNode88228198" source="DecisionNode306408897">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode306408897ActionNode88228198OpaqueExpression">
+              <language>AADL</language>
+              <body>(FaultType_variable.type1=1)</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode306408897ActionNode88228198Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode306408897DecisionNode1565056844" name="DecisionNode306408897DecisionNode1565056844" target="DecisionNode1565056844" source="DecisionNode306408897">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode306408897DecisionNode1565056844OpaqueExpression">
+              <language>AADL</language>
+              <body>not((FaultType_variable.type1=1))</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode306408897DecisionNode1565056844Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode88228198ActionNode1908211552" name="ActionNode88228198ActionNode1908211552" target="ActionNode1908211552" source="ActionNode88228198"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1908211552MergeNode1343280548" name="ActionNode1908211552MergeNode1343280548" target="MergeNode1343280548" source="ActionNode1908211552"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="MergeNode1343280548ActionNode1875283703" name="MergeNode1343280548ActionNode1875283703" target="ActionNode1875283703InputPin" source="MergeNode1343280548"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1875283703FinalNode10287197" name="ActionNode1875283703FinalNode10287197" target="FinalNode10287197" source="ActionNode1875283703"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1565056844ActionNode1656633582" name="DecisionNode1565056844ActionNode1656633582" target="ActionNode1656633582" source="DecisionNode1565056844">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1565056844ActionNode1656633582OpaqueExpression">
+              <language>AADL</language>
+              <body>(FaultType_variable.type1=2)</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1565056844ActionNode1656633582Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="DecisionNode1565056844ActionNode1599361643" name="DecisionNode1565056844ActionNode1599361643" target="ActionNode1599361643" source="DecisionNode1565056844">
+            <guard xmi:type="uml:OpaqueExpression" xmi:id="DecisionNode1565056844ActionNode1599361643OpaqueExpression">
+              <language>AADL</language>
+              <body>not((FaultType_variable.type1=2))</body>
+            </guard>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="DecisionNode1565056844ActionNode1599361643Weight" value="1"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1656633582ActionNode79617600" name="ActionNode1656633582ActionNode79617600" target="ActionNode79617600" source="ActionNode1656633582"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode79617600MergeNode1202168684" name="ActionNode79617600MergeNode1202168684" target="MergeNode1202168684" source="ActionNode79617600"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="MergeNode1202168684MergeNode1343280548" name="MergeNode1202168684MergeNode1343280548" target="MergeNode1343280548" source="MergeNode1202168684"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1599361643MergeNode1202168684" name="ActionNode1599361643MergeNode1202168684" target="MergeNode1202168684" source="ActionNode1599361643"/>
+          <variable xmi:type="uml:Variable" xmi:id="212772933" name="FaultInfo_variable" type="1657047589DataTypeImpl"/>
+          <variable xmi:type="uml:Variable" xmi:id="532977782" name="FaultType_variable" type="867644489DataTypeImpl"/>
+          <node xmi:type="uml:InitialNode" xmi:id="InitialNode307786733" name="FaultHandlingFunction_init_InitialNode_1" outgoing="InitialNode307786733DecisionNode918766454"/>
+          <node xmi:type="uml:AcceptEventAction" xmi:id="DecisionNode918766454" name="FaultHandlingFunction_init_accept_FaultInfo_2" incoming="InitialNode307786733DecisionNode918766454" outgoing="DecisionNode918766454DecisionNode306408897"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="DecisionNode306408897" name="FaultHandlingFunction_init_DecisionNode_3" incoming="DecisionNode918766454DecisionNode306408897" outgoing="DecisionNode306408897ActionNode88228198 DecisionNode306408897DecisionNode1565056844"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode88228198" name="FaultHandlingFunction_init_callWarn_4" incoming="DecisionNode306408897ActionNode88228198" outgoing="ActionNode88228198ActionNode1908211552" behavior="2023274995behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1908211552" name="FaultHandlingFunction_init_callCutOutput_5" incoming="ActionNode88228198ActionNode1908211552" outgoing="ActionNode1908211552MergeNode1343280548" behavior="2023274995behavior"/>
+          <node xmi:type="uml:MergeNode" xmi:id="MergeNode1343280548" name="FaultHandlingFunction_init_MergeNode_18" incoming="ActionNode1908211552MergeNode1343280548 MergeNode1202168684MergeNode1343280548" outgoing="MergeNode1343280548ActionNode1875283703"/>
+          <node xmi:type="uml:SendSignalAction" xmi:id="ActionNode1875283703" name="FaultHandlingFunction_init_sendPeriodicBITInfo_19" outgoing="ActionNode1875283703FinalNode10287197" signal="1953468156Signal">
+            <target xmi:type="uml:InputPin" xmi:id="ActionNode1875283703InputPin" name="target" incoming="MergeNode1343280548ActionNode1875283703">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ActionNode1875283703lowerValue" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ActionNode1875283703upperValue" value="1"/>
+            </target>
+          </node>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="FinalNode10287197" name="FaultHandlingFunction_init_FinalNode_20" incoming="ActionNode1875283703FinalNode10287197"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="DecisionNode1565056844" name="FaultHandlingFunction_init_DecisionNode_9" incoming="DecisionNode306408897DecisionNode1565056844" outgoing="DecisionNode1565056844ActionNode1656633582 DecisionNode1565056844ActionNode1599361643"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1656633582" name="FaultHandlingFunction_init_callWarn_10" incoming="DecisionNode1565056844ActionNode1656633582" outgoing="ActionNode1656633582ActionNode79617600" behavior="2023274995behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode79617600" name="FaultHandlingFunction_init_callDegradeOutput_11" incoming="ActionNode1656633582ActionNode79617600" outgoing="ActionNode79617600MergeNode1202168684" behavior="2023274995behavior"/>
+          <node xmi:type="uml:MergeNode" xmi:id="MergeNode1202168684" name="FaultHandlingFunction_init_MergeNode_17" incoming="ActionNode79617600MergeNode1202168684 ActionNode1599361643MergeNode1202168684" outgoing="MergeNode1202168684MergeNode1343280548"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1599361643" name="FaultHandlingFunction_init_callWarn_16" incoming="DecisionNode1565056844ActionNode1599361643" outgoing="ActionNode1599361643MergeNode1202168684" behavior="2023274995behavior"/>
+        </ownedBehavior>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Signal" xmi:id="1953468156Signal" name="1953468156Signal"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="1118894363association" memberEnd="1391039623property 1411897547ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1411897547ownedEnd" type="1302985946Impl" association="1118894363association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="648350386association" memberEnd="666533401property 1095388793ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1095388793ownedEnd" type="1302985946Impl" association="648350386association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1441534630association" memberEnd="1647559005property 838905179ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="838905179ownedEnd" type="1302985946Impl" association="1441534630association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1302985946Realization" name="FaultHandlingFunction_initRealization" client="1302985946Impl" supplier="1302985946Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1236874983Package" name="StorageFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1236874983Class" name="StorageFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="64778845property" name="ParameterRecord_init" visibility="public" type="64778845Impl" aggregation="composite" association="1773391092association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1313169370property" name="SubMemory_init" visibility="public" type="1313169370Impl" aggregation="composite" association="1702356108association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="205828657property" name="MemoryDownload_init" visibility="public" type="205828657Impl" aggregation="composite" association="2032298345association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="1236874983Impl" name="StorageFunction_initImpl" classifierBehavior="1236874983Activity">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="64778845propertyImpl" name="ParameterRecord_init" type="64778845Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1313169370propertyImpl" name="SubMemory_init" type="1313169370Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="205828657propertyImpl" name="MemoryDownload_init" type="205828657Impl"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="1236874983Activity" name="StorageFunction_initActivity" node="InitialNode1368007864 ActionNode1768513927 ActionNode3635622 ActionNode614234256 ActionNode106647773 FinalNode1613605756">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="2072764127behavior" name="OpaqueBehavior"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="InitialNode1368007864ActionNode1768513927" name="InitialNode1368007864ActionNode1768513927" target="ActionNode1768513927" source="InitialNode1368007864"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode1768513927ActionNode3635622" name="ActionNode1768513927ActionNode3635622" target="ActionNode3635622" source="ActionNode1768513927"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode3635622ActionNode614234256" name="ActionNode3635622ActionNode614234256" target="ActionNode614234256" source="ActionNode3635622"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode614234256ActionNode106647773" name="ActionNode614234256ActionNode106647773" target="ActionNode106647773" source="ActionNode614234256"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="ActionNode106647773FinalNode1613605756" name="ActionNode106647773FinalNode1613605756" target="FinalNode1613605756" source="ActionNode106647773"/>
+          <node xmi:type="uml:InitialNode" xmi:id="InitialNode1368007864" name="StorageFunction_init_InitialNode_1" outgoing="InitialNode1368007864ActionNode1768513927"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode1768513927" name="StorageFunction_init_callFilterLifeStroe_2" incoming="InitialNode1368007864ActionNode1768513927" outgoing="ActionNode1768513927ActionNode3635622" behavior="2072764127behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode3635622" name="StorageFunction_init_callElectricalMachineryLifeStore_3" incoming="ActionNode1768513927ActionNode3635622" outgoing="ActionNode3635622ActionNode614234256" behavior="2072764127behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode614234256" name="StorageFunction_init_callCurrentStore_4" incoming="ActionNode3635622ActionNode614234256" outgoing="ActionNode614234256ActionNode106647773" behavior="2072764127behavior"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="ActionNode106647773" name="StorageFunction_init_callBITStore_5" incoming="ActionNode614234256ActionNode106647773" outgoing="ActionNode106647773FinalNode1613605756" behavior="2072764127behavior"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="FinalNode1613605756" name="StorageFunction_init_FinalNode_6" incoming="ActionNode106647773FinalNode1613605756"/>
+        </ownedBehavior>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1773391092association" memberEnd="64778845property 1686231382ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1686231382ownedEnd" type="1236874983Impl" association="1773391092association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1702356108association" memberEnd="1313169370property 1324393680ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1324393680ownedEnd" type="1236874983Impl" association="1702356108association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="2032298345association" memberEnd="205828657property 1146326124ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1146326124ownedEnd" type="1236874983Impl" association="2032298345association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1236874983Realization" name="StorageFunction_initRealization" client="1236874983Impl" supplier="1236874983Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1827795721Package" name="InputFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1827795721Class" name="InputFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1468348698property" name="VMCInstructionInput_init" visibility="public" type="1468348698Impl" aggregation="composite" association="1239407119association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1915148546property" name="TemperatureSensorAcquire_init" visibility="public" type="1915148546Impl" aggregation="composite" association="1336128511association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1321091321property" name="PressureAcquire_init" visibility="public" type="1321091321Impl" aggregation="composite" association="694493689association"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1312137966property" name="RevolveAcquire_init" visibility="public" type="1312137966Impl" aggregation="composite" association="2105470272association"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1444143813Port" name="SOVtemperature" visibility="public" type="1275735611DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="709647316Port" name="SOVpressure" visibility="public" type="1143877181DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="388802109Port" name="AirOutTemperature" visibility="public" type="1515370970DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="789796651Port" name="FaultInfo" visibility="public" type="1657047589DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_4xqCgKuLEem3iZjFcC3cjg" name="input_rt_out" visibility="public" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="1827795721Impl" name="InputFunction_initImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1468348698propertyImpl" name="VMCInstructionInput_init" type="1468348698Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1915148546propertyImpl" name="TemperatureSensorAcquire_init" type="1915148546Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1321091321propertyImpl" name="PressureAcquire_init" type="1321091321Impl"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1312137966propertyImpl" name="RevolveAcquire_init" type="1312137966Impl"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1444143813PortImpl" name="SOVtemperature" visibility="public" type="1275735611DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="709647316PortImpl" name="SOVpressure" visibility="public" type="1143877181DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="388802109PortImpl" name="AirOutTemperature" visibility="public" type="1515370970DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="789796651PortImpl" name="FaultInfo" visibility="public" type="1657047589DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_-ulT8KuLEem3iZjFcC3cjg" name="input_rt_out" visibility="public" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1239407119association" memberEnd="1468348698property 474238682ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="474238682ownedEnd" type="1827795721Impl" association="1239407119association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1336128511association" memberEnd="1915148546property 1959006831ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1959006831ownedEnd" type="1827795721Impl" association="1336128511association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="694493689association" memberEnd="1321091321property 1044499505ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1044499505ownedEnd" type="1827795721Impl" association="694493689association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="2105470272association" memberEnd="1312137966property 1204983799ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1204983799ownedEnd" type="1827795721Impl" association="2105470272association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1827795721Realization" name="InputFunction_initRealization" client="1827795721Impl" supplier="1827795721Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1922192383Package" name="OutputFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1922192383Class" name="OutputFunction_init">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1504310517property" name="SubOutput_init" visibility="public" type="1504310517Impl" aggregation="composite" association="1072858646association"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="954643571Port" name="SOVswitchControlSignal" visibility="public" type="568818433DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="2091402088Port" name="PWMwaveSignal" visibility="public" type="372994653DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1128015400Port" name="Heater1TurnOnSignal" visibility="public" type="1853671488DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1500048200Port" name="Heater2TurnOnSignal" visibility="public" type="1269092500DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="2042089497Port" name="Heater3TurnOnSignal" visibility="public" type="1148547802DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="2122906398Port" name="Heater1TurnOffSignal" visibility="public" type="368773741DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1639315348Port" name="Heater2TurnOffSignal" visibility="public" type="371308747DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1778170344Port" name="Heater3TurnOffSignal" visibility="public" type="670638593DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1438818145Port" name="PeriodicBITInfo" visibility="public" type="1340671810DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_aTFKwKuMEem3iZjFcC3cjg" name="out_rt_in" visibility="public" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="1922192383Impl" name="OutputFunction_initImpl">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="1504310517propertyImpl" name="SubOutput_init" type="1504310517Impl"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="954643571PortImpl" name="SOVswitchControlSignal" visibility="public" type="568818433DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="2091402088PortImpl" name="PWMwaveSignal" visibility="public" type="372994653DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1128015400PortImpl" name="Heater1TurnOnSignal" visibility="public" type="1853671488DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1500048200PortImpl" name="Heater2TurnOnSignal" visibility="public" type="1269092500DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="2042089497PortImpl" name="Heater3TurnOnSignal" visibility="public" type="1148547802DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="2122906398PortImpl" name="Heater1TurnOffSignal" visibility="public" type="368773741DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1639315348PortImpl" name="Heater2TurnOffSignal" visibility="public" type="371308747DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1778170344PortImpl" name="Heater3TurnOffSignal" visibility="public" type="670638593DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="1438818145PortImpl" name="PeriodicBITInfo" visibility="public" type="1340671810DataTypeImpl" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_cWP8YKuMEem3iZjFcC3cjg" name="out_rt_in" visibility="public" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="1072858646association" memberEnd="1504310517property 1480693821ownedEnd">
+        <ownedEnd xmi:type="uml:Property" xmi:id="1480693821ownedEnd" type="1922192383Impl" association="1072858646association"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1922192383Realization" name="OutputFunction_initRealization" client="1922192383Impl" supplier="1922192383Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1873849459Package" name="SoftwareInitialize_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1873849459Class" name="SoftwareInitialize_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1873849459Impl" name="SoftwareInitialize_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1873849459Realization" name="SoftwareInitialize_initRealization" client="1873849459Impl" supplier="1873849459Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="582003800Package" name="ProjectConfigFunction_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="582003800Class" name="ProjectConfigFunction_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="582003800Impl" name="ProjectConfigFunction_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="582003800Realization" name="ProjectConfigFunction_initRealization" client="582003800Impl" supplier="582003800Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1057705260Package" name="HardwareInitialize_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1057705260Class" name="HardwareInitialize_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1057705260Impl" name="HardwareInitialize_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1057705260Realization" name="HardwareInitialize_initRealization" client="1057705260Impl" supplier="1057705260Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1227076739Package" name="ACCSupplyCurrent_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1227076739Class" name="ACCSupplyCurrent_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1227076739Impl" name="ACCSupplyCurrent_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1227076739Realization" name="ACCSupplyCurrent_initRealization" client="1227076739Impl" supplier="1227076739Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1135024248Package" name="RIUSupplyCurrent_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1135024248Class" name="RIUSupplyCurrent_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1135024248Impl" name="RIUSupplyCurrent_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1135024248Realization" name="RIUSupplyCurrent_initRealization" client="1135024248Impl" supplier="1135024248Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="631724840Package" name="ElectroMechanicalControl_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="631724840Class" name="ElectroMechanicalControl_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="631724840Impl" name="ElectroMechanicalControl_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="631724840Realization" name="ElectroMechanicalControl_initRealization" client="631724840Impl" supplier="631724840Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1716842797Package" name="SOVcontrol_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1716842797Class" name="SOVcontrol_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1716842797Impl" name="SOVcontrol_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1716842797Realization" name="SOVcontrol_initRealization" client="1716842797Impl" supplier="1716842797Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1416744866Package" name="HeaterControl_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1416744866Class" name="HeaterControl_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1416744866Impl" name="HeaterControl_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1416744866Realization" name="HeaterControl_initRealization" client="1416744866Impl" supplier="1416744866Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="582378480Package" name="PUBIT_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="582378480Class" name="PUBIT_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="582378480Impl" name="PUBIT_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="582378480Realization" name="PUBIT_initRealization" client="582378480Impl" supplier="582378480Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1200591243Package" name="PeriodicBIT_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1200591243Class" name="PeriodicBIT_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1200591243Impl" name="PeriodicBIT_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1200591243Realization" name="PeriodicBIT_initRealization" client="1200591243Impl" supplier="1200591243Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1135685652Package" name="ModelConvert_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1135685652Class" name="ModelConvert_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1135685652Impl" name="ModelConvert_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1135685652Realization" name="ModelConvert_initRealization" client="1135685652Impl" supplier="1135685652Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1391039623Package" name="Type1FaultHandling_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1391039623Class" name="Type1FaultHandling_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1391039623Impl" name="Type1FaultHandling_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1391039623Realization" name="Type1FaultHandling_initRealization" client="1391039623Impl" supplier="1391039623Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="666533401Package" name="Type2FaultHandling_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="666533401Class" name="Type2FaultHandling_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="666533401Impl" name="Type2FaultHandling_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="666533401Realization" name="Type2FaultHandling_initRealization" client="666533401Impl" supplier="666533401Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1647559005Package" name="Type3FaultHandling_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1647559005Class" name="Type3FaultHandling_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1647559005Impl" name="Type3FaultHandling_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1647559005Realization" name="Type3FaultHandling_initRealization" client="1647559005Impl" supplier="1647559005Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="64778845Package" name="ParameterRecord_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="64778845Class" name="ParameterRecord_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="64778845Impl" name="ParameterRecord_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="64778845Realization" name="ParameterRecord_initRealization" client="64778845Impl" supplier="64778845Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1313169370Package" name="SubMemory_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1313169370Class" name="SubMemory_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1313169370Impl" name="SubMemory_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1313169370Realization" name="SubMemory_initRealization" client="1313169370Impl" supplier="1313169370Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="205828657Package" name="MemoryDownload_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="205828657Class" name="MemoryDownload_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="205828657Impl" name="MemoryDownload_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="205828657Realization" name="MemoryDownload_initRealization" client="205828657Impl" supplier="205828657Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1468348698Package" name="VMCInstructionInput_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1468348698Class" name="VMCInstructionInput_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1468348698Impl" name="VMCInstructionInput_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1468348698Realization" name="VMCInstructionInput_initRealization" client="1468348698Impl" supplier="1468348698Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1915148546Package" name="TemperatureSensorAcquire_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1915148546Class" name="TemperatureSensorAcquire_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1915148546Impl" name="TemperatureSensorAcquire_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1915148546Realization" name="TemperatureSensorAcquire_initRealization" client="1915148546Impl" supplier="1915148546Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1321091321Package" name="PressureAcquire_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1321091321Class" name="PressureAcquire_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1321091321Impl" name="PressureAcquire_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1321091321Realization" name="PressureAcquire_initRealization" client="1321091321Impl" supplier="1321091321Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1312137966Package" name="RevolveAcquire_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1312137966Class" name="RevolveAcquire_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1312137966Impl" name="RevolveAcquire_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1312137966Realization" name="RevolveAcquire_initRealization" client="1312137966Impl" supplier="1312137966Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="1504310517Package" name="SubOutput_init">
+      <packagedElement xmi:type="uml:Class" xmi:id="1504310517Class" name="SubOutput_init"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="1504310517Impl" name="SubOutput_initImpl"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="1504310517Realization" name="SubOutput_initRealization" client="1504310517Impl" supplier="1504310517Class"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6FzmkKK6Eemm9MlwVoKPtg" name="losecontrol"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LIh8MKLFEem0gJC3SSoLFw" name="losspower"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_N6oJ8KOBEem0gJC3SSoLFw" name="nonmandatorygas"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_uxhHcKOBEem0gJC3SSoLFw" name="Block54" memberEnd="_uxhHc6OBEem0gJC3SSoLFw _uxhHdKOBEem0gJC3SSoLFw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uxhHcaOBEem0gJC3SSoLFw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uxhHcqOBEem0gJC3SSoLFw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_uxhHc6OBEem0gJC3SSoLFw" name="controlfunction_init" type="1223751644Class" association="_uxhHcKOBEem0gJC3SSoLFw"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_uxhHdKOBEem0gJC3SSoLFw" name="losecontrol" type="_6FzmkKK6Eemm9MlwVoKPtg" association="_uxhHcKOBEem0gJC3SSoLFw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_wANvMKOBEem0gJC3SSoLFw" name="Block55" memberEnd="_wANvM6OBEem0gJC3SSoLFw _wANvNKOBEem0gJC3SSoLFw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wANvMaOBEem0gJC3SSoLFw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wANvMqOBEem0gJC3SSoLFw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_wANvM6OBEem0gJC3SSoLFw" name="controlfunction_init" type="1223751644Class" association="_wANvMKOBEem0gJC3SSoLFw"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_wANvNKOBEem0gJC3SSoLFw" name="nonmandatorygas" type="_N6oJ8KOBEem0gJC3SSoLFw" association="_wANvMKOBEem0gJC3SSoLFw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_yf3ogKOBEem0gJC3SSoLFw" name="Block56" memberEnd="_yf3og6OBEem0gJC3SSoLFw _yf3ohKOBEem0gJC3SSoLFw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yf3ogaOBEem0gJC3SSoLFw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yf3ogqOBEem0gJC3SSoLFw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_yf3og6OBEem0gJC3SSoLFw" name="supplycurrentfunction_init" type="2035375637Class" association="_yf3ogKOBEem0gJC3SSoLFw"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_yf3ohKOBEem0gJC3SSoLFw" name="losspower" type="_LIh8MKLFEem0gJC3SSoLFw" association="_yf3ogKOBEem0gJC3SSoLFw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_AomdwKOCEem0gJC3SSoLFw" name="reporterror"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BdkW4KOCEem0gJC3SSoLFw" name="losereport"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_bUAJYKOCEem0gJC3SSoLFw" name="Block59" memberEnd="_bUAJY6OCEem0gJC3SSoLFw _bUAJZKOCEem0gJC3SSoLFw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bUAJYaOCEem0gJC3SSoLFw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bUAJYqOCEem0gJC3SSoLFw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_bUAJY6OCEem0gJC3SSoLFw" name="outputfunction_init" type="1922192383Class" association="_bUAJYKOCEem0gJC3SSoLFw"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_bUAJZKOCEem0gJC3SSoLFw" name="losereport" type="_BdkW4KOCEem0gJC3SSoLFw" association="_bUAJYKOCEem0gJC3SSoLFw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_cuTkMKOCEem0gJC3SSoLFw" name="Block60" memberEnd="_cuTkM6OCEem0gJC3SSoLFw _cuTkNKOCEem0gJC3SSoLFw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cuTkMaOCEem0gJC3SSoLFw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cuTkMqOCEem0gJC3SSoLFw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_cuTkM6OCEem0gJC3SSoLFw" name="outputfunction_init" type="1922192383Class" association="_cuTkMKOCEem0gJC3SSoLFw"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_cuTkNKOCEem0gJC3SSoLFw" name="reporterror" type="_AomdwKOCEem0gJC3SSoLFw" association="_cuTkMKOCEem0gJC3SSoLFw"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5SQPoLiPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5SWWQLiPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5SXkYLiPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5SYLcLiPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Activities"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5SansLiPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5SansbiPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Allocations"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5SansriPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5SbOwLiPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Blocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5SbOwbiPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5SbOwriPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//constraintblocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ConstraintBlocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5Sb10LiPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Sb10biPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//deprecatedelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_DeprecatedElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5Sb10riPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Scc4LiPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ModelElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5Scc4biPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Scc4riPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//portsandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Ports_u0026Flows"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5Scc47iPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Scc5LiPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Requirements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5SdD8LiPEei29siiWooayA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5SdD8biPEei29siiWooayA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_fCfCULwMEei2EdHeZzrqAQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fClwALwMEei2EdHeZzrqAQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fClwAbwMEei2EdHeZzrqAQ" key="Version" value="0.0.4"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fClwArwMEei2EdHeZzrqAQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fClwA7wMEei2EdHeZzrqAQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fClwBLwMEei2EdHeZzrqAQ" key="Copyright" Date="2018-08-03"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fClwBbwMEei2EdHeZzrqAQ" key="Author" Date="2018-08-03"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fCj60LwMEei2EdHeZzrqAQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://resources/AADL_profile/AADLprofile.profile.uml#_GyevAHMPEemwm-55Pv0L_A"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://resources/AADL_profile/AADLprofile.profile.uml#_cSts0IDZEeiaE5t4AlLGKA"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xc_2OKIpEemX2beMA3htKQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xdJmkKIpEemX2beMA3htKQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../AADL_profile/AADLprofile.profile.uml#_-i7pYJcBEeiyeoZPIHVdrg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../AADL_profile/AADLprofile.profile.uml#_cSts0IDZEeiaE5t4AlLGKA"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_-qmAYKK6Eemm9MlwVoKPtg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-qvxYKK6Eemm9MlwVoKPtg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-qvxYaK6Eemm9MlwVoKPtg" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-qvxYqK6Eemm9MlwVoKPtg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-qvxY6K6Eemm9MlwVoKPtg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-qvxZKK6Eemm9MlwVoKPtg" key="Date" value="2019-05-18"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-qvxZaK6Eemm9MlwVoKPtg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-qmAYaK6Eemm9MlwVoKPtg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../ReliabilityFailureCase/ReliabilityFailureCase.profile.uml#_WfOlIHk4Eem7mJSeq9Mykw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../ReliabilityFailureCase/ReliabilityFailureCase.profile.uml#_BTDiUHk4Eem7mJSeq9Mykw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_-qvxZqK6Eemm9MlwVoKPtg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-q47UKK6Eemm9MlwVoKPtg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-q47UaK6Eemm9MlwVoKPtg" key="Version" value="0.0.3"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-q47UqK6Eemm9MlwVoKPtg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-q47U6K6Eemm9MlwVoKPtg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-q47VKK6Eemm9MlwVoKPtg" key="Date" value="2019-05-18"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-q47VaK6Eemm9MlwVoKPtg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-qvxZ6K6Eemm9MlwVoKPtg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../SafetyFailureCase/SafetyFailureCase.profile.uml#_bhQxEHk3Eem7mJSeq9Mykw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../SafetyFailureCase/SafetyFailureCase.profile.uml#_GAKjQMz1Eeixu82nl6gONg"/>
+    </profileApplication>
+  </uml:Model>
+  <Blocks:Block xmi:id="1677052507typeBlock" base_Class="63272111TypeClass"/>
+  <AADLprofile:data xmi:id="660534113typeAadl" base_Class="63272111TypeClass"/>
+  <Blocks:Block xmi:id="1813896162typeBlock" base_Class="1154858971TypeClass"/>
+  <AADLprofile:data xmi:id="561476392typeAadl" base_Class="1154858971TypeClass"/>
+  <Blocks:Block xmi:id="413145868typeBlock" base_Class="1902266780TypeClass"/>
+  <AADLprofile:data xmi:id="442503473typeAadl" base_Class="1902266780TypeClass"/>
+  <Blocks:Block xmi:id="1675188305typeBlock" base_Class="1363814TypeClass"/>
+  <AADLprofile:data xmi:id="2075744093typeAadl" base_Class="1363814TypeClass"/>
+  <Blocks:Block xmi:id="1191425074typeBlock" base_Class="1632249986TypeClass"/>
+  <AADLprofile:data xmi:id="1857124179typeAadl" base_Class="1632249986TypeClass"/>
+  <Blocks:Block xmi:id="1866328893typeBlock" base_Class="1594087015TypeClass"/>
+  <AADLprofile:data xmi:id="902127820typeAadl" base_Class="1594087015TypeClass"/>
+  <Blocks:Block xmi:id="291165780typeBlock" base_Class="1353417416TypeClass"/>
+  <AADLprofile:data xmi:id="297710401typeAadl" base_Class="1353417416TypeClass"/>
+  <Blocks:Block xmi:id="64097372typeBlock" base_Class="258171578TypeClass"/>
+  <AADLprofile:data xmi:id="1157464580typeAadl" base_Class="258171578TypeClass"/>
+  <Blocks:Block xmi:id="878695806typeBlock" base_Class="549262689TypeClass"/>
+  <AADLprofile:data xmi:id="670867269typeAadl" base_Class="549262689TypeClass"/>
+  <Blocks:Block xmi:id="1197985431typeBlock" base_Class="263832604TypeClass"/>
+  <AADLprofile:data xmi:id="232326944typeAadl" base_Class="263832604TypeClass"/>
+  <Blocks:Block xmi:id="264504194typeBlock" base_Class="1318889321TypeClass"/>
+  <AADLprofile:data xmi:id="1982752667typeAadl" base_Class="1318889321TypeClass"/>
+  <Blocks:Block xmi:id="403161230typeBlock" base_Class="864788089TypeClass"/>
+  <AADLprofile:data xmi:id="938481695typeAadl" base_Class="864788089TypeClass"/>
+  <Blocks:Block xmi:id="1576045478typeBlock" base_Class="845652933TypeClass"/>
+  <AADLprofile:data xmi:id="2069177126typeAadl" base_Class="845652933TypeClass"/>
+  <Blocks:Block xmi:id="1126434679typeBlock" base_Class="1280507059TypeClass"/>
+  <AADLprofile:data xmi:id="449845518typeAadl" base_Class="1280507059TypeClass"/>
+  <Blocks:Block xmi:id="321032127typeBlock" base_Class="1213089121TypeClass"/>
+  <AADLprofile:data xmi:id="1885220115typeAadl" base_Class="1213089121TypeClass"/>
+  <Blocks:Block xmi:id="1342400264typeBlock" base_Class="1792823935TypeClass"/>
+  <AADLprofile:data xmi:id="1465599424typeAadl" base_Class="1792823935TypeClass"/>
+  <Blocks:Block xmi:id="366687359typeBlock" base_Class="1588278149DataType"/>
+  <AADLprofile:component xmi:id="404952641typeAadl0" base_Class="1588278149DataType"/>
+  <AADLprofile:data xmi:id="672872812typeAadl" base_Class="1588278149DataType"/>
+  <Blocks:Block xmi:id="799736049typeImplBlock" base_Class="1588278149DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1671410103typeImplAadl0" base_Class="1588278149DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1661874843typeImplAadl" base_Class="1588278149DataTypeImpl"/>
+  <Blocks:Block xmi:id="1702138339typeBlock" base_Class="313505743DataType"/>
+  <AADLprofile:component xmi:id="2079885043typeAadl0" base_Class="313505743DataType"/>
+  <AADLprofile:data xmi:id="1769007613typeAadl" base_Class="313505743DataType"/>
+  <Blocks:Block xmi:id="101591763typeImplBlock" base_Class="313505743DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1194608760typeImplAadl0" base_Class="313505743DataTypeImpl"/>
+  <AADLprofile:data xmi:id="2026148211typeImplAadl" base_Class="313505743DataTypeImpl"/>
+  <Blocks:Block xmi:id="1631209508typeBlock" base_Class="378904727DataType"/>
+  <AADLprofile:component xmi:id="78162931typeAadl0" base_Class="378904727DataType"/>
+  <AADLprofile:data xmi:id="1488710940typeAadl" base_Class="378904727DataType"/>
+  <Blocks:Block xmi:id="1670475652typeImplBlock" base_Class="378904727DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1356423354typeImplAadl0" base_Class="378904727DataTypeImpl"/>
+  <AADLprofile:data xmi:id="292535905typeImplAadl" base_Class="378904727DataTypeImpl"/>
+  <Blocks:Block xmi:id="2126434897typeBlock" base_Class="372994653DataType"/>
+  <AADLprofile:component xmi:id="1702474124typeAadl0" base_Class="372994653DataType"/>
+  <AADLprofile:data xmi:id="151623668typeAadl" base_Class="372994653DataType"/>
+  <Blocks:Block xmi:id="1148040466typeImplBlock" base_Class="372994653DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1288293268typeImplAadl0" base_Class="372994653DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1687483984typeImplAadl" base_Class="372994653DataTypeImpl"/>
+  <Blocks:Block xmi:id="134975242typeBlock" base_Class="568818433DataType"/>
+  <AADLprofile:component xmi:id="169631988typeAadl0" base_Class="568818433DataType"/>
+  <AADLprofile:data xmi:id="1241067921typeAadl" base_Class="568818433DataType"/>
+  <Blocks:Block xmi:id="1398564060typeImplBlock" base_Class="568818433DataTypeImpl"/>
+  <AADLprofile:component xmi:id="133939810typeImplAadl0" base_Class="568818433DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1846086057typeImplAadl" base_Class="568818433DataTypeImpl"/>
+  <Blocks:Block xmi:id="1589001175typeBlock" base_Class="1853671488DataType"/>
+  <AADLprofile:component xmi:id="117906097typeAadl0" base_Class="1853671488DataType"/>
+  <AADLprofile:data xmi:id="560271289typeAadl" base_Class="1853671488DataType"/>
+  <Blocks:Block xmi:id="701754653typeImplBlock" base_Class="1853671488DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1188299635typeImplAadl0" base_Class="1853671488DataTypeImpl"/>
+  <AADLprofile:data xmi:id="2042186634typeImplAadl" base_Class="1853671488DataTypeImpl"/>
+  <Blocks:Block xmi:id="1176845278typeBlock" base_Class="1881705411DataType"/>
+  <AADLprofile:component xmi:id="537688050typeAadl0" base_Class="1881705411DataType"/>
+  <AADLprofile:data xmi:id="333090146typeAadl" base_Class="1881705411DataType"/>
+  <Blocks:Block xmi:id="664300105typeImplBlock" base_Class="1881705411DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1217158831typeImplAadl0" base_Class="1881705411DataTypeImpl"/>
+  <AADLprofile:data xmi:id="192680875typeImplAadl" base_Class="1881705411DataTypeImpl"/>
+  <Blocks:Block xmi:id="673501137typeBlock" base_Class="1275735611DataType"/>
+  <AADLprofile:component xmi:id="49775964typeAadl0" base_Class="1275735611DataType"/>
+  <AADLprofile:data xmi:id="1769811938typeAadl" base_Class="1275735611DataType"/>
+  <Blocks:Block xmi:id="1947971328typeImplBlock" base_Class="1275735611DataTypeImpl"/>
+  <AADLprofile:component xmi:id="2060434453typeImplAadl0" base_Class="1275735611DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1152129909typeImplAadl" base_Class="1275735611DataTypeImpl"/>
+  <Blocks:Block xmi:id="1843722775typeBlock" base_Class="1143877181DataType"/>
+  <AADLprofile:component xmi:id="1783418026typeAadl0" base_Class="1143877181DataType"/>
+  <AADLprofile:data xmi:id="1310659877typeAadl" base_Class="1143877181DataType"/>
+  <Blocks:Block xmi:id="2079692061typeImplBlock" base_Class="1143877181DataTypeImpl"/>
+  <AADLprofile:component xmi:id="831253558typeImplAadl0" base_Class="1143877181DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1026449201typeImplAadl" base_Class="1143877181DataTypeImpl"/>
+  <Blocks:Block xmi:id="1545925273typeBlock" base_Class="196002700DataType"/>
+  <AADLprofile:component xmi:id="849366903typeAadl0" base_Class="196002700DataType"/>
+  <AADLprofile:data xmi:id="2109229509typeAadl" base_Class="196002700DataType"/>
+  <Blocks:Block xmi:id="16205661typeImplBlock" base_Class="196002700DataTypeImpl"/>
+  <AADLprofile:component xmi:id="2067582432typeImplAadl0" base_Class="196002700DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1272442375typeImplAadl" base_Class="196002700DataTypeImpl"/>
+  <Blocks:Block xmi:id="1315511464typeBlock" base_Class="1948152025DataType"/>
+  <AADLprofile:component xmi:id="1403493192typeAadl0" base_Class="1948152025DataType"/>
+  <AADLprofile:data xmi:id="670359789typeAadl" base_Class="1948152025DataType"/>
+  <Blocks:Block xmi:id="552326258typeImplBlock" base_Class="1948152025DataTypeImpl"/>
+  <AADLprofile:component xmi:id="652279963typeImplAadl0" base_Class="1948152025DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1240707796typeImplAadl" base_Class="1948152025DataTypeImpl"/>
+  <Blocks:Block xmi:id="926336409typeBlock" base_Class="1224790159DataType"/>
+  <AADLprofile:component xmi:id="427683388typeAadl0" base_Class="1224790159DataType"/>
+  <AADLprofile:data xmi:id="1296866005typeAadl" base_Class="1224790159DataType"/>
+  <Blocks:Block xmi:id="34062171typeImplBlock" base_Class="1224790159DataTypeImpl"/>
+  <AADLprofile:component xmi:id="52213903typeImplAadl0" base_Class="1224790159DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1978051294typeImplAadl" base_Class="1224790159DataTypeImpl"/>
+  <Blocks:Block xmi:id="1662491955typeBlock" base_Class="1549077637DataType"/>
+  <AADLprofile:component xmi:id="95000862typeAadl0" base_Class="1549077637DataType"/>
+  <AADLprofile:data xmi:id="1163485999typeAadl" base_Class="1549077637DataType"/>
+  <Blocks:Block xmi:id="832335397typeImplBlock" base_Class="1549077637DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1849529120typeImplAadl0" base_Class="1549077637DataTypeImpl"/>
+  <AADLprofile:data xmi:id="664114832typeImplAadl" base_Class="1549077637DataTypeImpl"/>
+  <Blocks:Block xmi:id="2078566158typeBlock" base_Class="702273878DataType"/>
+  <AADLprofile:component xmi:id="2042781633typeAadl0" base_Class="702273878DataType"/>
+  <AADLprofile:data xmi:id="1927837567typeAadl" base_Class="702273878DataType"/>
+  <Blocks:Block xmi:id="93196573typeImplBlock" base_Class="702273878DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1560988341typeImplAadl0" base_Class="702273878DataTypeImpl"/>
+  <AADLprofile:data xmi:id="920500866typeImplAadl" base_Class="702273878DataTypeImpl"/>
+  <Blocks:Block xmi:id="1926008746typeBlock" base_Class="121594025DataType"/>
+  <AADLprofile:component xmi:id="2031664164typeAadl0" base_Class="121594025DataType"/>
+  <AADLprofile:data xmi:id="583663663typeAadl" base_Class="121594025DataType"/>
+  <Blocks:Block xmi:id="1586239223typeImplBlock" base_Class="121594025DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1210807123typeImplAadl0" base_Class="121594025DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1961762798typeImplAadl" base_Class="121594025DataTypeImpl"/>
+  <Blocks:Block xmi:id="944912311typeBlock" base_Class="106406436DataType"/>
+  <AADLprofile:component xmi:id="737176069typeAadl0" base_Class="106406436DataType"/>
+  <AADLprofile:data xmi:id="803541498typeAadl" base_Class="106406436DataType"/>
+  <Blocks:Block xmi:id="337170592typeImplBlock" base_Class="106406436DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1029612059typeImplAadl0" base_Class="106406436DataTypeImpl"/>
+  <AADLprofile:data xmi:id="357976055typeImplAadl" base_Class="106406436DataTypeImpl"/>
+  <Blocks:Block xmi:id="1089773905typeBlock" base_Class="305921638DataType"/>
+  <AADLprofile:component xmi:id="141724974typeAadl0" base_Class="305921638DataType"/>
+  <AADLprofile:data xmi:id="792468008typeAadl" base_Class="305921638DataType"/>
+  <Blocks:Block xmi:id="1656297831typeImplBlock" base_Class="305921638DataTypeImpl"/>
+  <AADLprofile:component xmi:id="119718472typeImplAadl0" base_Class="305921638DataTypeImpl"/>
+  <AADLprofile:data xmi:id="463807615typeImplAadl" base_Class="305921638DataTypeImpl"/>
+  <Blocks:Block xmi:id="2120210863typeBlock" base_Class="1418166393DataType"/>
+  <AADLprofile:component xmi:id="1870558382typeAadl0" base_Class="1418166393DataType"/>
+  <AADLprofile:data xmi:id="1565144034typeAadl" base_Class="1418166393DataType"/>
+  <Blocks:Block xmi:id="900134010typeImplBlock" base_Class="1418166393DataTypeImpl"/>
+  <AADLprofile:component xmi:id="892649920typeImplAadl0" base_Class="1418166393DataTypeImpl"/>
+  <AADLprofile:data xmi:id="703797452typeImplAadl" base_Class="1418166393DataTypeImpl"/>
+  <Blocks:Block xmi:id="657313480typeBlock" base_Class="623569715DataType"/>
+  <AADLprofile:component xmi:id="881078572typeAadl0" base_Class="623569715DataType"/>
+  <AADLprofile:data xmi:id="83913224typeAadl" base_Class="623569715DataType"/>
+  <Blocks:Block xmi:id="1996581608typeImplBlock" base_Class="623569715DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1041477966typeImplAadl0" base_Class="623569715DataTypeImpl"/>
+  <AADLprofile:data xmi:id="730589937typeImplAadl" base_Class="623569715DataTypeImpl"/>
+  <Blocks:Block xmi:id="1375202523typeBlock" base_Class="769492386DataType"/>
+  <AADLprofile:component xmi:id="1926082154typeAadl0" base_Class="769492386DataType"/>
+  <AADLprofile:data xmi:id="115678880typeAadl" base_Class="769492386DataType"/>
+  <Blocks:Block xmi:id="1196714827typeImplBlock" base_Class="769492386DataTypeImpl"/>
+  <AADLprofile:component xmi:id="699127374typeImplAadl0" base_Class="769492386DataTypeImpl"/>
+  <AADLprofile:data xmi:id="906658799typeImplAadl" base_Class="769492386DataTypeImpl"/>
+  <Blocks:Block xmi:id="2094966270typeBlock" base_Class="414489488DataType"/>
+  <AADLprofile:component xmi:id="187700621typeAadl0" base_Class="414489488DataType"/>
+  <AADLprofile:data xmi:id="1774709503typeAadl" base_Class="414489488DataType"/>
+  <Blocks:Block xmi:id="1427346508typeImplBlock" base_Class="414489488DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1550527045typeImplAadl0" base_Class="414489488DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1476182072typeImplAadl" base_Class="414489488DataTypeImpl"/>
+  <Blocks:Block xmi:id="1220677045typeBlock" base_Class="20596778DataType"/>
+  <AADLprofile:component xmi:id="1308508138typeAadl0" base_Class="20596778DataType"/>
+  <AADLprofile:data xmi:id="2092092269typeAadl" base_Class="20596778DataType"/>
+  <Blocks:Block xmi:id="790280137typeImplBlock" base_Class="20596778DataTypeImpl"/>
+  <AADLprofile:component xmi:id="2012067898typeImplAadl0" base_Class="20596778DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1263589442typeImplAadl" base_Class="20596778DataTypeImpl"/>
+  <Blocks:Block xmi:id="1536017642typeBlock" base_Class="567512038DataType"/>
+  <AADLprofile:component xmi:id="1102810057typeAadl0" base_Class="567512038DataType"/>
+  <AADLprofile:data xmi:id="207935860typeAadl" base_Class="567512038DataType"/>
+  <Blocks:Block xmi:id="836104101typeImplBlock" base_Class="567512038DataTypeImpl"/>
+  <AADLprofile:component xmi:id="72013793typeImplAadl0" base_Class="567512038DataTypeImpl"/>
+  <AADLprofile:data xmi:id="422768994typeImplAadl" base_Class="567512038DataTypeImpl"/>
+  <Blocks:Block xmi:id="763448669typeBlock" base_Class="867644489DataType"/>
+  <AADLprofile:component xmi:id="2133222099typeAadl0" base_Class="867644489DataType"/>
+  <AADLprofile:data xmi:id="1905341876typeAadl" base_Class="867644489DataType"/>
+  <Blocks:Block xmi:id="2072924851typeImplBlock" base_Class="867644489DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1547834170typeImplAadl0" base_Class="867644489DataTypeImpl"/>
+  <AADLprofile:data xmi:id="272552603typeImplAadl" base_Class="867644489DataTypeImpl"/>
+  <Blocks:Block xmi:id="763343135typeBlock" base_Class="1642640859DataType"/>
+  <AADLprofile:component xmi:id="1261634593typeAadl0" base_Class="1642640859DataType"/>
+  <AADLprofile:data xmi:id="1883220843typeAadl" base_Class="1642640859DataType"/>
+  <Blocks:Block xmi:id="1423806170typeImplBlock" base_Class="1642640859DataTypeImpl"/>
+  <AADLprofile:component xmi:id="75115031typeImplAadl0" base_Class="1642640859DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1471882421typeImplAadl" base_Class="1642640859DataTypeImpl"/>
+  <Blocks:Block xmi:id="1656837908typeBlock" base_Class="1515370970DataType"/>
+  <AADLprofile:component xmi:id="935261129typeAadl0" base_Class="1515370970DataType"/>
+  <AADLprofile:data xmi:id="967767815typeAadl" base_Class="1515370970DataType"/>
+  <Blocks:Block xmi:id="1987904897typeImplBlock" base_Class="1515370970DataTypeImpl"/>
+  <AADLprofile:component xmi:id="518817197typeImplAadl0" base_Class="1515370970DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1586236674typeImplAadl" base_Class="1515370970DataTypeImpl"/>
+  <Blocks:Block xmi:id="1948298254typeBlock" base_Class="236683661DataType"/>
+  <AADLprofile:component xmi:id="1249528725typeAadl0" base_Class="236683661DataType"/>
+  <AADLprofile:data xmi:id="2095118806typeAadl" base_Class="236683661DataType"/>
+  <Blocks:Block xmi:id="774178862typeImplBlock" base_Class="236683661DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1603567928typeImplAadl0" base_Class="236683661DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1193955260typeImplAadl" base_Class="236683661DataTypeImpl"/>
+  <Blocks:Block xmi:id="983382815typeBlock" base_Class="1014968518DataType"/>
+  <AADLprofile:component xmi:id="1107025973typeAadl0" base_Class="1014968518DataType"/>
+  <AADLprofile:data xmi:id="1413021721typeAadl" base_Class="1014968518DataType"/>
+  <Blocks:Block xmi:id="293991256typeImplBlock" base_Class="1014968518DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1108572084typeImplAadl0" base_Class="1014968518DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1559747979typeImplAadl" base_Class="1014968518DataTypeImpl"/>
+  <Blocks:Block xmi:id="2121470885typeBlock" base_Class="1079130052DataType"/>
+  <AADLprofile:component xmi:id="662988040typeAadl0" base_Class="1079130052DataType"/>
+  <AADLprofile:data xmi:id="1174274038typeAadl" base_Class="1079130052DataType"/>
+  <Blocks:Block xmi:id="348130458typeImplBlock" base_Class="1079130052DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1925761948typeImplAadl0" base_Class="1079130052DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1986022632typeImplAadl" base_Class="1079130052DataTypeImpl"/>
+  <Blocks:Block xmi:id="1224240194typeBlock" base_Class="1556615069DataType"/>
+  <AADLprofile:component xmi:id="2086197994typeAadl0" base_Class="1556615069DataType"/>
+  <AADLprofile:data xmi:id="137092741typeAadl" base_Class="1556615069DataType"/>
+  <Blocks:Block xmi:id="335777018typeImplBlock" base_Class="1556615069DataTypeImpl"/>
+  <AADLprofile:component xmi:id="521304132typeImplAadl0" base_Class="1556615069DataTypeImpl"/>
+  <AADLprofile:data xmi:id="623345350typeImplAadl" base_Class="1556615069DataTypeImpl"/>
+  <Blocks:Block xmi:id="2067948994typeBlock" base_Class="1940800273DataType"/>
+  <AADLprofile:component xmi:id="1998512822typeAadl0" base_Class="1940800273DataType"/>
+  <AADLprofile:data xmi:id="1766941661typeAadl" base_Class="1940800273DataType"/>
+  <Blocks:Block xmi:id="1751520045typeImplBlock" base_Class="1940800273DataTypeImpl"/>
+  <AADLprofile:component xmi:id="6428566typeImplAadl0" base_Class="1940800273DataTypeImpl"/>
+  <AADLprofile:data xmi:id="6905470typeImplAadl" base_Class="1940800273DataTypeImpl"/>
+  <Blocks:Block xmi:id="987955755typeBlock" base_Class="1657047589DataType"/>
+  <AADLprofile:component xmi:id="716008518typeAadl0" base_Class="1657047589DataType"/>
+  <AADLprofile:data xmi:id="1627217347typeAadl" base_Class="1657047589DataType"/>
+  <Blocks:Block xmi:id="640579163typeImplBlock" base_Class="1657047589DataTypeImpl"/>
+  <AADLprofile:component xmi:id="75418351typeImplAadl0" base_Class="1657047589DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1173379450typeImplAadl" base_Class="1657047589DataTypeImpl"/>
+  <Blocks:Block xmi:id="446708810typeBlock" base_Class="1340671810DataType"/>
+  <AADLprofile:component xmi:id="1752937539typeAadl0" base_Class="1340671810DataType"/>
+  <AADLprofile:data xmi:id="797379519typeAadl" base_Class="1340671810DataType"/>
+  <Blocks:Block xmi:id="676583962typeImplBlock" base_Class="1340671810DataTypeImpl"/>
+  <AADLprofile:component xmi:id="864739638typeImplAadl0" base_Class="1340671810DataTypeImpl"/>
+  <AADLprofile:data xmi:id="115774120typeImplAadl" base_Class="1340671810DataTypeImpl"/>
+  <Blocks:Block xmi:id="656285725typeBlock" base_Class="296463160DataType"/>
+  <AADLprofile:component xmi:id="1140455065typeAadl0" base_Class="296463160DataType"/>
+  <AADLprofile:data xmi:id="1899519900typeAadl" base_Class="296463160DataType"/>
+  <Blocks:Block xmi:id="1032247528typeImplBlock" base_Class="296463160DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1800280461typeImplAadl0" base_Class="296463160DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1737451331typeImplAadl" base_Class="296463160DataTypeImpl"/>
+  <Blocks:Block xmi:id="1605550958typeBlock" base_Class="1417150609DataType"/>
+  <AADLprofile:component xmi:id="1143683940typeAadl0" base_Class="1417150609DataType"/>
+  <AADLprofile:data xmi:id="1476590045typeAadl" base_Class="1417150609DataType"/>
+  <Blocks:Block xmi:id="1282021060typeImplBlock" base_Class="1417150609DataTypeImpl"/>
+  <AADLprofile:component xmi:id="84546964typeImplAadl0" base_Class="1417150609DataTypeImpl"/>
+  <AADLprofile:data xmi:id="417857098typeImplAadl" base_Class="1417150609DataTypeImpl"/>
+  <Blocks:Block xmi:id="509070017typeBlock" base_Class="1269092500DataType"/>
+  <AADLprofile:component xmi:id="962949871typeAadl0" base_Class="1269092500DataType"/>
+  <AADLprofile:data xmi:id="1332962729typeAadl" base_Class="1269092500DataType"/>
+  <Blocks:Block xmi:id="574500003typeImplBlock" base_Class="1269092500DataTypeImpl"/>
+  <AADLprofile:component xmi:id="44039143typeImplAadl0" base_Class="1269092500DataTypeImpl"/>
+  <AADLprofile:data xmi:id="276759377typeImplAadl" base_Class="1269092500DataTypeImpl"/>
+  <Blocks:Block xmi:id="394073539typeBlock" base_Class="1148547802DataType"/>
+  <AADLprofile:component xmi:id="1791005704typeAadl0" base_Class="1148547802DataType"/>
+  <AADLprofile:data xmi:id="38627210typeAadl" base_Class="1148547802DataType"/>
+  <Blocks:Block xmi:id="1832986299typeImplBlock" base_Class="1148547802DataTypeImpl"/>
+  <AADLprofile:component xmi:id="309192157typeImplAadl0" base_Class="1148547802DataTypeImpl"/>
+  <AADLprofile:data xmi:id="2095272780typeImplAadl" base_Class="1148547802DataTypeImpl"/>
+  <Blocks:Block xmi:id="1902875287typeBlock" base_Class="368773741DataType"/>
+  <AADLprofile:component xmi:id="206951018typeAadl0" base_Class="368773741DataType"/>
+  <AADLprofile:data xmi:id="1791662495typeAadl" base_Class="368773741DataType"/>
+  <Blocks:Block xmi:id="657411785typeImplBlock" base_Class="368773741DataTypeImpl"/>
+  <AADLprofile:component xmi:id="184389521typeImplAadl0" base_Class="368773741DataTypeImpl"/>
+  <AADLprofile:data xmi:id="681171494typeImplAadl" base_Class="368773741DataTypeImpl"/>
+  <Blocks:Block xmi:id="1269167552typeBlock" base_Class="371308747DataType"/>
+  <AADLprofile:component xmi:id="759331362typeAadl0" base_Class="371308747DataType"/>
+  <AADLprofile:data xmi:id="1273814342typeAadl" base_Class="371308747DataType"/>
+  <Blocks:Block xmi:id="1351664400typeImplBlock" base_Class="371308747DataTypeImpl"/>
+  <AADLprofile:component xmi:id="889141047typeImplAadl0" base_Class="371308747DataTypeImpl"/>
+  <AADLprofile:data xmi:id="173197536typeImplAadl" base_Class="371308747DataTypeImpl"/>
+  <Blocks:Block xmi:id="1906834861typeBlock" base_Class="670638593DataType"/>
+  <AADLprofile:component xmi:id="1009531425typeAadl0" base_Class="670638593DataType"/>
+  <AADLprofile:data xmi:id="547745932typeAadl" base_Class="670638593DataType"/>
+  <Blocks:Block xmi:id="1310865331typeImplBlock" base_Class="670638593DataTypeImpl"/>
+  <AADLprofile:component xmi:id="2548047typeImplAadl0" base_Class="670638593DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1560686168typeImplAadl" base_Class="670638593DataTypeImpl"/>
+  <Blocks:Block xmi:id="233352893typeBlock" base_Class="1378387172DataType"/>
+  <AADLprofile:component xmi:id="989006550typeAadl0" base_Class="1378387172DataType"/>
+  <AADLprofile:data xmi:id="1449887550typeAadl" base_Class="1378387172DataType"/>
+  <Blocks:Block xmi:id="1089611443typeImplBlock" base_Class="1378387172DataTypeImpl"/>
+  <AADLprofile:component xmi:id="145220950typeImplAadl0" base_Class="1378387172DataTypeImpl"/>
+  <AADLprofile:data xmi:id="706804526typeImplAadl" base_Class="1378387172DataTypeImpl"/>
+  <Blocks:Block xmi:id="1179938847typeBlock" base_Class="1911465505DataType"/>
+  <AADLprofile:component xmi:id="1803553392typeAadl0" base_Class="1911465505DataType"/>
+  <AADLprofile:data xmi:id="231171552typeAadl" base_Class="1911465505DataType"/>
+  <Blocks:Block xmi:id="152831447typeImplBlock" base_Class="1911465505DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1814906979typeImplAadl0" base_Class="1911465505DataTypeImpl"/>
+  <AADLprofile:data xmi:id="127212572typeImplAadl" base_Class="1911465505DataTypeImpl"/>
+  <Blocks:Block xmi:id="1485834296typeBlock" base_Class="835424619DataType"/>
+  <AADLprofile:component xmi:id="1593322777typeAadl0" base_Class="835424619DataType"/>
+  <AADLprofile:data xmi:id="1898102566typeAadl" base_Class="835424619DataType"/>
+  <Blocks:Block xmi:id="479148192typeImplBlock" base_Class="835424619DataTypeImpl"/>
+  <AADLprofile:component xmi:id="1141256897typeImplAadl0" base_Class="835424619DataTypeImpl"/>
+  <AADLprofile:data xmi:id="1535729597typeImplAadl" base_Class="835424619DataTypeImpl"/>
+  <Blocks:Block xmi:id="149264162block" base_Class="1520006427Class"/>
+  <Blocks:Block xmi:id="1317681073blockImpl" base_Class="1520006427Impl"/>
+  <AADLprofile:system xmi:id="915984788system" base_Class="1520006427Class"/>
+  <AADLprofile:system xmi:id="116936181system" base_Class="1520006427Impl"/>
+  <Blocks:NestedConnectorEnd xmi:id="1305241729NestedConnectorEndSrc" base_Element="1034427089end" propertyPath="1223751644property" base_ConnectorEnd="1034427089end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1385083352NestedConnectorEndDest" base_Element="789403770end" propertyPath="1922192383property" base_ConnectorEnd="789403770end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1878210172NestedConnectorEndSrc" base_Element="1213484767end" propertyPath="1223751644property" base_ConnectorEnd="1213484767end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1322269443NestedConnectorEndDest" base_Element="605596649end" propertyPath="1922192383property" base_ConnectorEnd="605596649end"/>
+  <Blocks:NestedConnectorEnd xmi:id="864240203NestedConnectorEndSrc" base_Element="2093246195end" propertyPath="1223751644property" base_ConnectorEnd="2093246195end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1787076649NestedConnectorEndDest" base_Element="891857793end" propertyPath="1922192383property" base_ConnectorEnd="891857793end"/>
+  <Blocks:NestedConnectorEnd xmi:id="456505285NestedConnectorEndSrc" base_Element="1426047131end" propertyPath="1223751644property" base_ConnectorEnd="1426047131end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1876292328NestedConnectorEndDest" base_Element="1157896651end" propertyPath="1922192383property" base_ConnectorEnd="1157896651end"/>
+  <Blocks:NestedConnectorEnd xmi:id="323999050NestedConnectorEndSrc" base_Element="1405960041end" propertyPath="1223751644property" base_ConnectorEnd="1405960041end"/>
+  <Blocks:NestedConnectorEnd xmi:id="339718737NestedConnectorEndDest" base_Element="783541913end" propertyPath="1922192383property" base_ConnectorEnd="783541913end"/>
+  <Blocks:NestedConnectorEnd xmi:id="910670923NestedConnectorEndSrc" base_Element="1594040512end" propertyPath="1223751644property" base_ConnectorEnd="1594040512end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1973855237NestedConnectorEndDest" base_Element="870684569end" propertyPath="1922192383property" base_ConnectorEnd="870684569end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1818158447NestedConnectorEndSrc" base_Element="739830373end" propertyPath="1223751644property" base_ConnectorEnd="739830373end"/>
+  <Blocks:NestedConnectorEnd xmi:id="2061176893NestedConnectorEndDest" base_Element="293309365end" propertyPath="1922192383property" base_ConnectorEnd="293309365end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1717982854NestedConnectorEndSrc" base_Element="1151270096end" propertyPath="1223751644property" base_ConnectorEnd="1151270096end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1039796919NestedConnectorEndDest" base_Element="238100445end" propertyPath="1922192383property" base_ConnectorEnd="238100445end"/>
+  <Blocks:NestedConnectorEnd xmi:id="575854836NestedConnectorEndSrc" base_Element="1326504979end" propertyPath="1302985946property" base_ConnectorEnd="1326504979end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1642299089NestedConnectorEndDest" base_Element="677040013end" propertyPath="1922192383property" base_ConnectorEnd="677040013end"/>
+  <Blocks:NestedConnectorEnd xmi:id="401297102NestedConnectorEndSrc" base_Element="1837408345end" propertyPath="1827795721property" base_ConnectorEnd="1837408345end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1818965321NestedConnectorEndDest" base_Element="614846444end" propertyPath="1223751644property" base_ConnectorEnd="614846444end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1473480753NestedConnectorEndSrc" base_Element="1655126097end" propertyPath="1827795721property" base_ConnectorEnd="1655126097end"/>
+  <Blocks:NestedConnectorEnd xmi:id="592954189NestedConnectorEndDest" base_Element="2020149665end" propertyPath="1223751644property" base_ConnectorEnd="2020149665end"/>
+  <Blocks:NestedConnectorEnd xmi:id="219210876NestedConnectorEndSrc" base_Element="272634002end" propertyPath="1827795721property" base_ConnectorEnd="272634002end"/>
+  <Blocks:NestedConnectorEnd xmi:id="111468109NestedConnectorEndDest" base_Element="384862337end" propertyPath="1223751644property" base_ConnectorEnd="384862337end"/>
+  <Blocks:NestedConnectorEnd xmi:id="1277324719NestedConnectorEndSrc" base_Element="1817477342end" propertyPath="1827795721property" base_ConnectorEnd="1817477342end"/>
+  <Blocks:NestedConnectorEnd xmi:id="206106959NestedConnectorEndDest" base_Element="1154669435end" propertyPath="1302985946property" base_ConnectorEnd="1154669435end"/>
+  <Blocks:Block xmi:id="128645912block" base_Class="1223599708Class"/>
+  <Blocks:Block xmi:id="702027816blockImpl" base_Class="1223599708Impl"/>
+  <AADLprofile:system xmi:id="723686508system" base_Class="1223599708Class"/>
+  <AADLprofile:system xmi:id="1566178218system" base_Class="1223599708Impl"/>
+  <Blocks:Block xmi:id="746487997block" base_Class="2035375637Class"/>
+  <Blocks:Block xmi:id="1686457866blockImpl" base_Class="2035375637Impl"/>
+  <AADLprofile:system xmi:id="68621230system" base_Class="2035375637Class"/>
+  <AADLprofile:system xmi:id="1733914619system" base_Class="2035375637Impl"/>
+  <Blocks:Block xmi:id="1288837602block" base_Class="1223751644Class"/>
+  <Blocks:Block xmi:id="691424528blockImpl" base_Class="1223751644Impl"/>
+  <AADLprofile:system xmi:id="618053206system" base_Class="1223751644Class"/>
+  <AADLprofile:system xmi:id="1224202780system" base_Class="1223751644Impl"/>
+  <DeprecatedElements:FlowPort xmi:id="347523049SysmlPort" base_Port="565938996Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="267605666AadlPort" base_Port="565938996Port"/>
+  <AADLprofile:feature xmi:id="516324612AadlFeature" base_Port="565938996Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1746363386SysmlPort" base_Port="565938996PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1245477022AadlPort" base_Port="565938996PortImpl"/>
+  <AADLprofile:feature xmi:id="1609527613AadlFeature" base_Port="565938996PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1928075673SysmlPort" base_Port="1754154262Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="565689485AadlPort" base_Port="1754154262Port"/>
+  <AADLprofile:feature xmi:id="149346477AadlFeature" base_Port="1754154262Port"/>
+  <DeprecatedElements:FlowPort xmi:id="740566549SysmlPort" base_Port="1754154262PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1050067673AadlPort" base_Port="1754154262PortImpl"/>
+  <AADLprofile:feature xmi:id="584663634AadlFeature" base_Port="1754154262PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="482661652SysmlPort" base_Port="211675617Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="291326999AadlPort" base_Port="211675617Port"/>
+  <AADLprofile:feature xmi:id="425055471AadlFeature" base_Port="211675617Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1903611461SysmlPort" base_Port="211675617PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1260439818AadlPort" base_Port="211675617PortImpl"/>
+  <AADLprofile:feature xmi:id="811997581AadlFeature" base_Port="211675617PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="119755202SysmlPort" base_Port="153027368Port" direction="out"/>
+  <AADLprofile:feature xmi:id="1080079237AadlFeature" base_Port="153027368Port"/>
+  <AADLprofile:dataEventPort xmi:id="119755202AadlPort" base_Port="153027368Port"/>
+  <DeprecatedElements:FlowPort xmi:id="231033370SysmlPort" base_Port="153027368PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="233799774AadlPort" base_Port="153027368PortImpl"/>
+  <AADLprofile:feature xmi:id="274689376AadlFeature" base_Port="153027368PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1441138805SysmlPort" base_Port="1367251945Port" direction="out"/>
+  <AADLprofile:feature xmi:id="1926499657AadlFeature" base_Port="1367251945Port"/>
+  <AADLprofile:dataEventPort xmi:id="1441138805AadlPort" base_Port="1367251945Port"/>
+  <DeprecatedElements:FlowPort xmi:id="55086653SysmlPort" base_Port="1367251945PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="1754777433AadlPort" base_Port="1367251945PortImpl"/>
+  <AADLprofile:feature xmi:id="223858590AadlFeature" base_Port="1367251945PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1606104376SysmlPort" base_Port="1045114212Port" direction="out"/>
+  <AADLprofile:feature xmi:id="407200148AadlFeature" base_Port="1045114212Port"/>
+  <AADLprofile:dataEventPort xmi:id="1606104376AadlPort" base_Port="1045114212Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1312739530SysmlPort" base_Port="1045114212PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="2108083628AadlPort" base_Port="1045114212PortImpl"/>
+  <AADLprofile:feature xmi:id="2066888149AadlFeature" base_Port="1045114212PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1221112550SysmlPort" base_Port="966447085Port" direction="out"/>
+  <AADLprofile:feature xmi:id="1892193205AadlFeature" base_Port="966447085Port"/>
+  <AADLprofile:dataEventPort xmi:id="1221112550AadlPort" base_Port="966447085Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1003027373SysmlPort" base_Port="966447085PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="1371467164AadlPort" base_Port="966447085PortImpl"/>
+  <AADLprofile:feature xmi:id="1550596815AadlFeature" base_Port="966447085PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1745702860SysmlPort" base_Port="224612032Port" direction="out"/>
+  <AADLprofile:feature xmi:id="350541043AadlFeature" base_Port="224612032Port"/>
+  <AADLprofile:dataEventPort xmi:id="1745702860AadlPort" base_Port="224612032Port"/>
+  <DeprecatedElements:FlowPort xmi:id="848300542SysmlPort" base_Port="224612032PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="261613345AadlPort" base_Port="224612032PortImpl"/>
+  <AADLprofile:feature xmi:id="224836144AadlFeature" base_Port="224612032PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1058513955SysmlPort" base_Port="1907852674Port" direction="out"/>
+  <AADLprofile:feature xmi:id="234526150AadlFeature" base_Port="1907852674Port"/>
+  <AADLprofile:dataEventPort xmi:id="1058513955AadlPort" base_Port="1907852674Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1038402999SysmlPort" base_Port="1907852674PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="99307265AadlPort" base_Port="1907852674PortImpl"/>
+  <AADLprofile:feature xmi:id="132109603AadlFeature" base_Port="1907852674PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1590834363SysmlPort" base_Port="1429709809Port" direction="out"/>
+  <AADLprofile:feature xmi:id="1157667755AadlFeature" base_Port="1429709809Port"/>
+  <AADLprofile:dataEventPort xmi:id="1590834363AadlPort" base_Port="1429709809Port"/>
+  <DeprecatedElements:FlowPort xmi:id="441210701SysmlPort" base_Port="1429709809PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="1665396714AadlPort" base_Port="1429709809PortImpl"/>
+  <AADLprofile:feature xmi:id="746289365AadlFeature" base_Port="1429709809PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1835492146SysmlPort" base_Port="681645193Port" direction="out"/>
+  <AADLprofile:feature xmi:id="367638508AadlFeature" base_Port="681645193Port"/>
+  <AADLprofile:dataEventPort xmi:id="1835492146AadlPort" base_Port="681645193Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1772692996SysmlPort" base_Port="681645193PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="518215220AadlPort" base_Port="681645193PortImpl"/>
+  <AADLprofile:feature xmi:id="1212930089AadlFeature" base_Port="681645193PortImpl"/>
+  <Blocks:Block xmi:id="1568454789block" base_Class="472420196Class"/>
+  <Blocks:Block xmi:id="686812547blockImpl" base_Class="472420196Impl"/>
+  <AADLprofile:system xmi:id="1618162871system" base_Class="472420196Class"/>
+  <AADLprofile:system xmi:id="292205019system" base_Class="472420196Impl"/>
+  <Blocks:Block xmi:id="352316658block" base_Class="2037337224Class"/>
+  <Blocks:Block xmi:id="939758819blockImpl" base_Class="2037337224Impl"/>
+  <AADLprofile:system xmi:id="319848663system" base_Class="2037337224Class"/>
+  <AADLprofile:system xmi:id="1571863630system" base_Class="2037337224Impl"/>
+  <Blocks:Block xmi:id="2004326983block" base_Class="1302985946Class"/>
+  <Blocks:Block xmi:id="2094890775blockImpl" base_Class="1302985946Impl"/>
+  <AADLprofile:system xmi:id="92872099system" base_Class="1302985946Class"/>
+  <AADLprofile:system xmi:id="1842133193system" base_Class="1302985946Impl"/>
+  <DeprecatedElements:FlowPort xmi:id="639808149SysmlPort" base_Port="1398323836Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="823153793AadlPort" base_Port="1398323836Port"/>
+  <AADLprofile:feature xmi:id="2092512005AadlFeature" base_Port="1398323836Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1958467243SysmlPort" base_Port="1398323836PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1195271347AadlPort" base_Port="1398323836PortImpl"/>
+  <AADLprofile:feature xmi:id="1949930633AadlFeature" base_Port="1398323836PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1093509136SysmlPort" base_Port="778901167Port" direction="out"/>
+  <AADLprofile:feature xmi:id="1795762192AadlFeature" base_Port="778901167Port"/>
+  <AADLprofile:dataEventPort xmi:id="1093509136AadlPort" base_Port="778901167Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1596375614SysmlPort" base_Port="778901167PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="1728284815AadlPort" base_Port="778901167PortImpl"/>
+  <AADLprofile:feature xmi:id="1258461535AadlFeature" base_Port="778901167PortImpl"/>
+  <Blocks:Block xmi:id="820404313block" base_Class="1236874983Class"/>
+  <Blocks:Block xmi:id="643891079blockImpl" base_Class="1236874983Impl"/>
+  <AADLprofile:system xmi:id="310756428system" base_Class="1236874983Class"/>
+  <AADLprofile:system xmi:id="1858677872system" base_Class="1236874983Impl"/>
+  <Blocks:Block xmi:id="779705045block" base_Class="1827795721Class"/>
+  <Blocks:Block xmi:id="290169922blockImpl" base_Class="1827795721Impl"/>
+  <AADLprofile:system xmi:id="1407858397system" base_Class="1827795721Class"/>
+  <AADLprofile:system xmi:id="2115674429system" base_Class="1827795721Impl"/>
+  <DeprecatedElements:FlowPort xmi:id="449967065SysmlPort" base_Port="1444143813Port" direction="out"/>
+  <AADLprofile:feature xmi:id="1458842997AadlFeature" base_Port="1444143813Port"/>
+  <AADLprofile:dataEventPort xmi:id="449967065AadlPort" base_Port="1444143813Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1412081064SysmlPort" base_Port="1444143813PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="2140333401AadlPort" base_Port="1444143813PortImpl"/>
+  <AADLprofile:feature xmi:id="1783144009AadlFeature" base_Port="1444143813PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="488675824SysmlPort" base_Port="709647316Port" direction="out"/>
+  <AADLprofile:feature xmi:id="480671769AadlFeature" base_Port="709647316Port"/>
+  <AADLprofile:dataEventPort xmi:id="488675824AadlPort" base_Port="709647316Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1962344185SysmlPort" base_Port="709647316PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="1524800760AadlPort" base_Port="709647316PortImpl"/>
+  <AADLprofile:feature xmi:id="1125413197AadlFeature" base_Port="709647316PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1826471814SysmlPort" base_Port="388802109Port" direction="out"/>
+  <AADLprofile:feature xmi:id="790595026AadlFeature" base_Port="388802109Port"/>
+  <AADLprofile:dataEventPort xmi:id="1826471814AadlPort" base_Port="388802109Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1641335189SysmlPort" base_Port="388802109PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="19546875AadlPort" base_Port="388802109PortImpl"/>
+  <AADLprofile:feature xmi:id="9104599AadlFeature" base_Port="388802109PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1407768577SysmlPort" base_Port="789796651Port" direction="out"/>
+  <AADLprofile:feature xmi:id="347552648AadlFeature" base_Port="789796651Port"/>
+  <AADLprofile:dataEventPort xmi:id="1407768577AadlPort" base_Port="789796651Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1205444223SysmlPort" base_Port="789796651PortImpl" direction="out"/>
+  <AADLprofile:dataEventPort xmi:id="283258375AadlPort" base_Port="789796651PortImpl"/>
+  <AADLprofile:feature xmi:id="90162378AadlFeature" base_Port="789796651PortImpl"/>
+  <Blocks:Block xmi:id="1223655333block" base_Class="1922192383Class"/>
+  <Blocks:Block xmi:id="609905237blockImpl" base_Class="1922192383Impl"/>
+  <AADLprofile:system xmi:id="303241962system" base_Class="1922192383Class"/>
+  <AADLprofile:system xmi:id="1612779767system" base_Class="1922192383Impl"/>
+  <DeprecatedElements:FlowPort xmi:id="1392531713SysmlPort" base_Port="954643571Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="620730870AadlPort" base_Port="954643571Port"/>
+  <AADLprofile:feature xmi:id="774964169AadlFeature" base_Port="954643571Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1191123024SysmlPort" base_Port="954643571PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="392600031AadlPort" base_Port="954643571PortImpl"/>
+  <AADLprofile:feature xmi:id="1326355180AadlFeature" base_Port="954643571PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1762127759SysmlPort" base_Port="2091402088Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1459902311AadlPort" base_Port="2091402088Port"/>
+  <AADLprofile:feature xmi:id="1947173945AadlFeature" base_Port="2091402088Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1328406950SysmlPort" base_Port="2091402088PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="427824219AadlPort" base_Port="2091402088PortImpl"/>
+  <AADLprofile:feature xmi:id="1825228643AadlFeature" base_Port="2091402088PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1693235343SysmlPort" base_Port="1128015400Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1147950437AadlPort" base_Port="1128015400Port"/>
+  <AADLprofile:feature xmi:id="1566028671AadlFeature" base_Port="1128015400Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1729926761SysmlPort" base_Port="1128015400PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1723163333AadlPort" base_Port="1128015400PortImpl"/>
+  <AADLprofile:feature xmi:id="1079301131AadlFeature" base_Port="1128015400PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="544758581SysmlPort" base_Port="1500048200Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="601112205AadlPort" base_Port="1500048200Port"/>
+  <AADLprofile:feature xmi:id="1857733496AadlFeature" base_Port="1500048200Port"/>
+  <DeprecatedElements:FlowPort xmi:id="145274408SysmlPort" base_Port="1500048200PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1785460219AadlPort" base_Port="1500048200PortImpl"/>
+  <AADLprofile:feature xmi:id="1749655149AadlFeature" base_Port="1500048200PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1347428639SysmlPort" base_Port="2042089497Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="495240395AadlPort" base_Port="2042089497Port"/>
+  <AADLprofile:feature xmi:id="687161005AadlFeature" base_Port="2042089497Port"/>
+  <DeprecatedElements:FlowPort xmi:id="216758056SysmlPort" base_Port="2042089497PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1566762867AadlPort" base_Port="2042089497PortImpl"/>
+  <AADLprofile:feature xmi:id="1719390856AadlFeature" base_Port="2042089497PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1744476348SysmlPort" base_Port="2122906398Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="813691228AadlPort" base_Port="2122906398Port"/>
+  <AADLprofile:feature xmi:id="2053947743AadlFeature" base_Port="2122906398Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1119593224SysmlPort" base_Port="2122906398PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1899494555AadlPort" base_Port="2122906398PortImpl"/>
+  <AADLprofile:feature xmi:id="1049433840AadlFeature" base_Port="2122906398PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="578244167SysmlPort" base_Port="1639315348Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1036720866AadlPort" base_Port="1639315348Port"/>
+  <AADLprofile:feature xmi:id="1943468772AadlFeature" base_Port="1639315348Port"/>
+  <DeprecatedElements:FlowPort xmi:id="632969464SysmlPort" base_Port="1639315348PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1034366846AadlPort" base_Port="1639315348PortImpl"/>
+  <AADLprofile:feature xmi:id="1482571298AadlFeature" base_Port="1639315348PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="479985175SysmlPort" base_Port="1778170344Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="1796282596AadlPort" base_Port="1778170344Port"/>
+  <AADLprofile:feature xmi:id="1875445287AadlFeature" base_Port="1778170344Port"/>
+  <DeprecatedElements:FlowPort xmi:id="1179622098SysmlPort" base_Port="1778170344PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="99069770AadlPort" base_Port="1778170344PortImpl"/>
+  <AADLprofile:feature xmi:id="1716666666AadlFeature" base_Port="1778170344PortImpl"/>
+  <DeprecatedElements:FlowPort xmi:id="1091406841SysmlPort" base_Port="1438818145Port" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="2066612224AadlPort" base_Port="1438818145Port"/>
+  <AADLprofile:feature xmi:id="1133211088AadlFeature" base_Port="1438818145Port"/>
+  <DeprecatedElements:FlowPort xmi:id="925118362SysmlPort" base_Port="1438818145PortImpl" direction="in"/>
+  <AADLprofile:dataEventPort xmi:id="450570436AadlPort" base_Port="1438818145PortImpl"/>
+  <AADLprofile:feature xmi:id="301860255AadlFeature" base_Port="1438818145PortImpl"/>
+  <Blocks:Block xmi:id="1033898781block" base_Class="1873849459Class"/>
+  <Blocks:Block xmi:id="751731923blockImpl" base_Class="1873849459Impl"/>
+  <AADLprofile:system xmi:id="1589607419system" base_Class="1873849459Class"/>
+  <AADLprofile:system xmi:id="462871430system" base_Class="1873849459Impl"/>
+  <Blocks:Block xmi:id="1983993234block" base_Class="582003800Class"/>
+  <Blocks:Block xmi:id="1320326099blockImpl" base_Class="582003800Impl"/>
+  <AADLprofile:system xmi:id="699312833system" base_Class="582003800Class"/>
+  <AADLprofile:system xmi:id="1159221832system" base_Class="582003800Impl"/>
+  <Blocks:Block xmi:id="945200120block" base_Class="1057705260Class"/>
+  <Blocks:Block xmi:id="1245184732blockImpl" base_Class="1057705260Impl"/>
+  <AADLprofile:system xmi:id="1405914164system" base_Class="1057705260Class"/>
+  <AADLprofile:system xmi:id="877835080system" base_Class="1057705260Impl"/>
+  <Blocks:Block xmi:id="612372501block" base_Class="1227076739Class"/>
+  <Blocks:Block xmi:id="669980571blockImpl" base_Class="1227076739Impl"/>
+  <AADLprofile:system xmi:id="139531943system" base_Class="1227076739Class"/>
+  <AADLprofile:system xmi:id="1143772557system" base_Class="1227076739Impl"/>
+  <Blocks:Block xmi:id="524292613block" base_Class="1135024248Class"/>
+  <Blocks:Block xmi:id="1044691269blockImpl" base_Class="1135024248Impl"/>
+  <AADLprofile:system xmi:id="611655880system" base_Class="1135024248Class"/>
+  <AADLprofile:system xmi:id="418230511system" base_Class="1135024248Impl"/>
+  <Blocks:Block xmi:id="1691809501block" base_Class="631724840Class"/>
+  <Blocks:Block xmi:id="1898948523blockImpl" base_Class="631724840Impl"/>
+  <AADLprofile:system xmi:id="1468598237system" base_Class="631724840Class"/>
+  <AADLprofile:system xmi:id="204287025system" base_Class="631724840Impl"/>
+  <Blocks:Block xmi:id="696325762block" base_Class="1716842797Class"/>
+  <Blocks:Block xmi:id="78249278blockImpl" base_Class="1716842797Impl"/>
+  <AADLprofile:system xmi:id="1389491934system" base_Class="1716842797Class"/>
+  <AADLprofile:system xmi:id="1498287985system" base_Class="1716842797Impl"/>
+  <Blocks:Block xmi:id="1207414125block" base_Class="1416744866Class"/>
+  <Blocks:Block xmi:id="1857685144blockImpl" base_Class="1416744866Impl"/>
+  <AADLprofile:system xmi:id="1451008126system" base_Class="1416744866Class"/>
+  <AADLprofile:system xmi:id="1613980101system" base_Class="1416744866Impl"/>
+  <Blocks:Block xmi:id="1827615412block" base_Class="582378480Class"/>
+  <Blocks:Block xmi:id="1596634430blockImpl" base_Class="582378480Impl"/>
+  <AADLprofile:system xmi:id="1346054067system" base_Class="582378480Class"/>
+  <AADLprofile:system xmi:id="233414229system" base_Class="582378480Impl"/>
+  <Blocks:Block xmi:id="1524246507block" base_Class="1200591243Class"/>
+  <Blocks:Block xmi:id="1909031785blockImpl" base_Class="1200591243Impl"/>
+  <AADLprofile:system xmi:id="515677551system" base_Class="1200591243Class"/>
+  <AADLprofile:system xmi:id="99092489system" base_Class="1200591243Impl"/>
+  <Blocks:Block xmi:id="204070852block" base_Class="1135685652Class"/>
+  <Blocks:Block xmi:id="914676707blockImpl" base_Class="1135685652Impl"/>
+  <AADLprofile:system xmi:id="1228995691system" base_Class="1135685652Class"/>
+  <AADLprofile:system xmi:id="563696368system" base_Class="1135685652Impl"/>
+  <Blocks:Block xmi:id="1448028313block" base_Class="1391039623Class"/>
+  <Blocks:Block xmi:id="1454700310blockImpl" base_Class="1391039623Impl"/>
+  <AADLprofile:system xmi:id="443211227system" base_Class="1391039623Class"/>
+  <AADLprofile:system xmi:id="1882353435system" base_Class="1391039623Impl"/>
+  <Blocks:Block xmi:id="17477420block" base_Class="666533401Class"/>
+  <Blocks:Block xmi:id="1789186243blockImpl" base_Class="666533401Impl"/>
+  <AADLprofile:system xmi:id="443126450system" base_Class="666533401Class"/>
+  <AADLprofile:system xmi:id="1648634581system" base_Class="666533401Impl"/>
+  <Blocks:Block xmi:id="1878397579block" base_Class="1647559005Class"/>
+  <Blocks:Block xmi:id="1164756337blockImpl" base_Class="1647559005Impl"/>
+  <AADLprofile:system xmi:id="1422248795system" base_Class="1647559005Class"/>
+  <AADLprofile:system xmi:id="1153997788system" base_Class="1647559005Impl"/>
+  <Blocks:Block xmi:id="1122131061block" base_Class="64778845Class"/>
+  <Blocks:Block xmi:id="1954412086blockImpl" base_Class="64778845Impl"/>
+  <AADLprofile:system xmi:id="1104150013system" base_Class="64778845Class"/>
+  <AADLprofile:system xmi:id="571737089system" base_Class="64778845Impl"/>
+  <Blocks:Block xmi:id="1429892044block" base_Class="1313169370Class"/>
+  <Blocks:Block xmi:id="143458124blockImpl" base_Class="1313169370Impl"/>
+  <AADLprofile:system xmi:id="1928024710system" base_Class="1313169370Class"/>
+  <AADLprofile:system xmi:id="1201393714system" base_Class="1313169370Impl"/>
+  <Blocks:Block xmi:id="523502694block" base_Class="205828657Class"/>
+  <Blocks:Block xmi:id="335106321blockImpl" base_Class="205828657Impl"/>
+  <AADLprofile:system xmi:id="1057096322system" base_Class="205828657Class"/>
+  <AADLprofile:system xmi:id="58661502system" base_Class="205828657Impl"/>
+  <Blocks:Block xmi:id="831640034block" base_Class="1468348698Class"/>
+  <Blocks:Block xmi:id="881454002blockImpl" base_Class="1468348698Impl"/>
+  <AADLprofile:system xmi:id="761244732system" base_Class="1468348698Class"/>
+  <AADLprofile:system xmi:id="1394012231system" base_Class="1468348698Impl"/>
+  <Blocks:Block xmi:id="587641771block" base_Class="1915148546Class"/>
+  <Blocks:Block xmi:id="1993096664blockImpl" base_Class="1915148546Impl"/>
+  <AADLprofile:system xmi:id="624807431system" base_Class="1915148546Class"/>
+  <AADLprofile:system xmi:id="1434822093system" base_Class="1915148546Impl"/>
+  <Blocks:Block xmi:id="1734921464block" base_Class="1321091321Class"/>
+  <Blocks:Block xmi:id="1654396447blockImpl" base_Class="1321091321Impl"/>
+  <AADLprofile:system xmi:id="1583265013system" base_Class="1321091321Class"/>
+  <AADLprofile:system xmi:id="477040112system" base_Class="1321091321Impl"/>
+  <Blocks:Block xmi:id="1893311806block" base_Class="1312137966Class"/>
+  <Blocks:Block xmi:id="1170293737blockImpl" base_Class="1312137966Impl"/>
+  <AADLprofile:system xmi:id="69839433system" base_Class="1312137966Class"/>
+  <AADLprofile:system xmi:id="2034224018system" base_Class="1312137966Impl"/>
+  <Blocks:Block xmi:id="1161102582block" base_Class="1504310517Class"/>
+  <Blocks:Block xmi:id="303980815blockImpl" base_Class="1504310517Impl"/>
+  <AADLprofile:system xmi:id="76437954system" base_Class="1504310517Class"/>
+  <AADLprofile:system xmi:id="1337440170system" base_Class="1504310517Impl"/>
+  <Blocks:Block xmi:id="_6F9XkKK6Eemm9MlwVoKPtg" base_Class="_6FzmkKK6Eemm9MlwVoKPtg"/>
+  <SafetyFailurecase:SafetyFailurecase xmi:id="_BfgYAKK7Eemm9MlwVoKPtg" base_Class="_6FzmkKK6Eemm9MlwVoKPtg"/>
+  <Blocks:Block xmi:id="_LIrtMKLFEem0gJC3SSoLFw" base_Class="_LIh8MKLFEem0gJC3SSoLFw"/>
+  <SafetyFailurecase:SafetyFailurecase xmi:id="_hDeJgKLFEem0gJC3SSoLFw" base_Class="_LIh8MKLFEem0gJC3SSoLFw"/>
+  <Blocks:Block xmi:id="_N6oJ8aOBEem0gJC3SSoLFw" base_Class="_N6oJ8KOBEem0gJC3SSoLFw"/>
+  <SafetyFailurecase:SafetyFailurecase xmi:id="_8yOCEKOBEem0gJC3SSoLFw" base_Class="_N6oJ8KOBEem0gJC3SSoLFw"/>
+  <Blocks:Block xmi:id="_AomdwaOCEem0gJC3SSoLFw" base_Class="_AomdwKOCEem0gJC3SSoLFw"/>
+  <Blocks:Block xmi:id="_BduH4KOCEem0gJC3SSoLFw" base_Class="_BdkW4KOCEem0gJC3SSoLFw"/>
+  <SafetyFailurecase:SafetyFailurecase xmi:id="_N-mOgKOCEem0gJC3SSoLFw" base_Class="_BdkW4KOCEem0gJC3SSoLFw"/>
+  <SafetyFailurecase:SafetyFailurecase xmi:id="_PDyU8KOCEem0gJC3SSoLFw" base_Class="_AomdwKOCEem0gJC3SSoLFw"/>
+  <DeprecatedElements:FlowPort xmi:id="_4yB18KuLEem3iZjFcC3cjg" base_Port="_4xqCgKuLEem3iZjFcC3cjg" direction="out"/>
+  <AADLprofile:feature xmi:id="_9uDrEKuLEem3iZjFcC3cjg" base_Port="_4xqCgKuLEem3iZjFcC3cjg"/>
+  <DeprecatedElements:FlowPort xmi:id="_-ul7AKuLEem3iZjFcC3cjg" base_Port="_-ulT8KuLEem3iZjFcC3cjg" direction="out"/>
+  <AADLprofile:feature xmi:id="_-umiEKuLEem3iZjFcC3cjg" base_Port="_-ulT8KuLEem3iZjFcC3cjg"/>
+  <DeprecatedElements:FlowPort xmi:id="_HWrLIKuMEem3iZjFcC3cjg" base_Port="_HWqkEKuMEem3iZjFcC3cjg" direction="in"/>
+  <AADLprofile:feature xmi:id="_HWryMKuMEem3iZjFcC3cjg" base_Port="_HWqkEKuMEem3iZjFcC3cjg"/>
+  <DeprecatedElements:FlowPort xmi:id="_J0n0QKuMEem3iZjFcC3cjg" base_Port="_J0nNMKuMEem3iZjFcC3cjg" direction="in"/>
+  <AADLprofile:feature xmi:id="_J0obUKuMEem3iZjFcC3cjg" base_Port="_J0nNMKuMEem3iZjFcC3cjg"/>
+  <DeprecatedElements:FlowPort xmi:id="_K3x6YKuMEem3iZjFcC3cjg" base_Port="_K3wsQKuMEem3iZjFcC3cjg" direction="out"/>
+  <AADLprofile:feature xmi:id="_K3yhcKuMEem3iZjFcC3cjg" base_Port="_K3wsQKuMEem3iZjFcC3cjg"/>
+  <DeprecatedElements:FlowPort xmi:id="_NhypkauMEem3iZjFcC3cjg" base_Port="_NhypkKuMEem3iZjFcC3cjg" direction="out"/>
+  <AADLprofile:feature xmi:id="_Nhz3sKuMEem3iZjFcC3cjg" base_Port="_NhypkKuMEem3iZjFcC3cjg"/>
+  <DeprecatedElements:FlowPort xmi:id="_aTFx0KuMEem3iZjFcC3cjg" base_Port="_aTFKwKuMEem3iZjFcC3cjg" direction="in"/>
+  <AADLprofile:feature xmi:id="_aTGY4KuMEem3iZjFcC3cjg" base_Port="_aTFKwKuMEem3iZjFcC3cjg"/>
+  <DeprecatedElements:FlowPort xmi:id="_cWQjcKuMEem3iZjFcC3cjg" base_Port="_cWP8YKuMEem3iZjFcC3cjg" direction="in"/>
+  <AADLprofile:feature xmi:id="_cWRKgKuMEem3iZjFcC3cjg" base_Port="_cWP8YKuMEem3iZjFcC3cjg"/>
+  <Blocks:NestedConnectorEnd xmi:id="_iQLkMquMEem3iZjFcC3cjg" base_Element="_iQLkMKuMEem3iZjFcC3cjg" propertyPath="1827795721propertyImpl" base_ConnectorEnd="_iQLkMKuMEem3iZjFcC3cjg"/>
+  <Blocks:NestedConnectorEnd xmi:id="_iQMLQKuMEem3iZjFcC3cjg" base_Element="_iQLkMauMEem3iZjFcC3cjg" propertyPath="1223751644propertyImpl" base_ConnectorEnd="_iQLkMauMEem3iZjFcC3cjg"/>
+  <Blocks:NestedConnectorEnd xmi:id="_jQFiAquMEem3iZjFcC3cjg" base_Element="_jQFiAKuMEem3iZjFcC3cjg" propertyPath="1223751644propertyImpl" base_ConnectorEnd="_jQFiAKuMEem3iZjFcC3cjg"/>
+  <Blocks:NestedConnectorEnd xmi:id="_jQFiA6uMEem3iZjFcC3cjg" base_Element="_jQFiAauMEem3iZjFcC3cjg" propertyPath="1922192383propertyImpl" base_ConnectorEnd="_jQFiAauMEem3iZjFcC3cjg"/>
+  <AADLprofile:RT_feature xmi:id="_b1bR0KuNEem3iZjFcC3cjg" base_Port="_-ulT8KuLEem3iZjFcC3cjg" latency_min="1ms" latency_max="1ms" flowtype="1"/>
+  <AADLprofile:RT_Connector xmi:id="_d-sEYKuNEem3iZjFcC3cjg" base_Connector="_iQK9IKuMEem3iZjFcC3cjg" latency_min="1ms" latency_max="1ms"/>
+  <PortsAndFlows:ItemFlow xmi:id="_gHwpsKuNEem3iZjFcC3cjg" base_InformationFlow="_gHinQKuNEem3iZjFcC3cjg"/>
+  <AADLprofile:RT_ItemFlow xmi:id="_kv2PIKuNEem3iZjFcC3cjg" base_InformationFlow="_gHinQKuNEem3iZjFcC3cjg" latency_min="2ms" latency_max="3ms"/>
+  <AADLprofile:RT_Connector xmi:id="_oZWFYKuNEem3iZjFcC3cjg" base_Connector="_jQE68KuMEem3iZjFcC3cjg" latency_min="1ms" latency_max="1ms"/>
+  <AADLprofile:RT_feature xmi:id="_q_ck8KuNEem3iZjFcC3cjg" base_Port="_cWP8YKuMEem3iZjFcC3cjg" flowtype="2"/>
+  <AADLprofile:RT_Constraint xmi:id="_zLZpAKupEem3iZjFcC3cjg" base_Constraint="_k5NVwKupEem3iZjFcC3cjg" CalculateMaxTime="8ms"/>
+  <AADLprofile:RT_Constraint xmi:id="_aRcJAKutEem3iZjFcC3cjg" base_Constraint="_Yn-34KutEem3iZjFcC3cjg" CalculateMaxTime="7ms"/>
+  <AADLprofile:RT_Block xmi:id="_NXJwsKxZEemwovlMu9Blgw" base_Class="1223599708Impl" Period="2ms" deadline="3ms"/>
+</xmi:XMI>

@@ -9,6 +9,11 @@ import entity.Channel;
 import entity.Component;
 import entity.Linkpoint;
 
+/*
+* Author：lankx
+* 手动验证文档，一致性验证，第二条
+* */
+
 public class LinkPointTypeAndPeriod {
 
 	public static void excute() {
@@ -21,7 +26,7 @@ public class LinkPointTypeAndPeriod {
 		Map<String, Component> componentListSimulink = new LinkedHashMap<>();
         Map<String, Channel> channelListSimulink = new LinkedHashMap<>();
         
-        parseXML("aadl(4).xml", componentListAadl, channelListAadl);
+        parseXML("aadl(9).xml", componentListAadl, channelListAadl);
         parseXML("sysml(4).xml", componentListSysml, channelListSysml);
         parseXML("simulink(2).xml", componentListSimulink, channelListSimulink);
 //      System.out.println("\naadl存储的结果为：");
@@ -89,17 +94,18 @@ public class LinkPointTypeAndPeriod {
 									 String targetProperty) {
 		if (sourceLinkpoint.getAttr(targetProperty) == null) {
 			System.out.println("Channel " + currentChannel.getAttr("id") + " : " + 
-					sourceLinkpoint.getAttr("name") + " does not have " + targetProperty + ".");
+					sourceLinkpoint.getAttr("name") + "没有" + targetProperty + "属性。");
 		} else if (destLinkpoint.getAttr(targetProperty) == null) {
 			System.out.println("Channel " + currentChannel.getAttr("id") + " : " + 
-					destLinkpoint.getAttr("name") + " does not have " + targetProperty + ".");
+					destLinkpoint.getAttr("name") + "没有" + targetProperty + "属性。");
 		} else {
 			if (!sourceLinkpoint.getAttr(targetProperty).equals(destLinkpoint.getAttr(targetProperty))) {
 				System.out.println("Channel " + currentChannel.getAttr("id") + 
 						" : source linkpoint's " + targetProperty + " " + 
 						sourceLinkpoint.getAttr(targetProperty) + 
-						" is inconsistent with dest linkpoint's " + targetProperty + " " + 
-						destLinkpoint.getAttr(targetProperty));
+						"与目的linkpoint的" + targetProperty + " " +
+						destLinkpoint.getAttr(targetProperty) +
+						"属性不一致");
 			}
 		}
 	}

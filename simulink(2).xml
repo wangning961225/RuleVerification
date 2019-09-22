@@ -10,24 +10,35 @@
 		<linkpoint direction="in" id="1937157303" name="Operator_Feedback"/>
 	</component>
 	<component id="453762388" name="Thermostat" type="rtos" wcet="1ms">
-		<linkpoint direction="in" id="-1045283895" name="Operator_Settings"/>
-		<linkpoint direction="in" id="1049282009" name="Current_Temperature" period="3ms"/>
-		<linkpoint direction="out" id="1607972813" name="Operator_Feedback"/>
-		<linkpoint direction="out" id="1759844637" name="Heat_Control"/>
-
-		<state id="23456" name="idle" wcet="4ms"/>
-
-		<state id="12345" name="Data_process" wcet="3ms">
-			<state id="-878922423" name="idle" wcet="0.5ms"/>
-			<state id="-878922424" name="DataValidate" wcet="0.5ms"/>
-			<state id="1994780096" name="Fault_invalid Data" wcet="1ms" faultState="true" faultType="Invalid data"
-				   exit="report fault message"/>
+		<linkpoint name="Operator_Feedback" id="1209941583" direction="out" datatype="Inherit: Same as Simulink"/>
+		<linkpoint name="Operator_Settings" id="1276011914" direction="in"/>
+		<linkpoint name="Heat_Control" id="1390316477" direction="out" datatype="Inherit: Same as Simulink"/>
+		<linkpoint name="Current_Temperature" id="2013151822" period="3ms" direction="in"/>
+		<state name="Setting" id="-1135841676" wcet="0.5ms"/>
+		<state name="Feedback" id="-870460141" wcet="0.5ms"/>
+		<state name="Control" id="147416947" wcet="0.5ms"/>
+		<state name="Data_Process" id="521036064" wcet="1ms">
+			<state name="Format" id="-1764096303" wcet="0.5ms"/>
+			<state name="Idle" id="-1348878953"/>
+			<state name="Data Validate" id="190540289" wcet="0.5ms"/>
+			<state name="InvalidParameter" id="870620668" wcet="0.5ms" faultType="InvalidParameter" exit="report fault message" faultState="true"/>
+			<transition id="-1701928444" event="format the" source="-1764096303" dest="-1348878953"/>
+			<transition id="1787533335" source="870620668" dest="-1348878953"/>
+			<transition id="298490513" source="-1348878953" dest="190540289"/>
+			<transition id="501226544" event="validate the" source="190540289" dest="-1764096303"/>
+			<transition id="1960972538" event="validate the" source="190540289" dest="870620668"/>
 		</state>
-
-		<transition id="116627" source="23456" dest="12345" event="receive current temperature"/>
-			
-		<transition id="1166279956" source="878922424" dest="1994780096" event="data is invalid"/>
-		<transition id="1166279952" source="1994780096" dest="-878922423" event=""/>
+		<state name="Checking" id="888838529" wcet="0.5ms"/>
+		<state name="Idle" id="1112395068"/>
+		<transition id="120987971" event="send heat" source="147416947" dest="1112395068"/>
+		<transition id="1168170605" source="1112395068" dest="-1135841676"/>
+		<transition id="-1534339738" event="compare" source="888838529" dest="1112395068"/>
+		<transition id="-1555030520" source="-870460141" dest="1112395068"/>
+		<transition id="2071184909" source="1112395068" dest="521036064"/>
+		<transition id="-965785761" event="set the" source="-1135841676" dest="-870460141"/>
+		<transition id="692403454" source="521036064" dest="888838529"/>
+		<transition id="1615392940" event="compare" source="888838529" dest="147416947"/>
+		<transition id="1657383674" source="-870460141" dest="888838529"/>
 	</component>
 	<component id="742744536" name="Alarm" type="rtos" wcet="1ms">
 		<linkpoint direction="out" id="1799107237" name="Send_Out_Alarm"/>

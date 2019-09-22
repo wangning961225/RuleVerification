@@ -2,6 +2,8 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/lankx/project/java/dom4j-2.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/IDEA/dom4j-2.1.1-sources.jar" sourcepath="E:/IDEA/dom4j-2.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="E:/IDEA/dom4j-2.1.1.jar" sourcepath="E:/IDEA/dom4j-2.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/IDEA/mysql-connector-java-8.0.16/mysql-connector-java-8.0.16.jar" sourcepath="E:/IDEA/mysql-connector-java-8.0.16"/>
 	<classpathentry kind="output" path="out/production/RuleVeritify"/>
 </classpath>
