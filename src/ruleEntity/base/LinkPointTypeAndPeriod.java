@@ -12,23 +12,24 @@ import entity.Linkpoint;
 /*
 * Author：lankx
 * 手动验证文档，一致性验证，第二条
+* 三个模型：有数据交换的组件间数据类型和周期的一致性
 * */
 
 public class LinkPointTypeAndPeriod {
 
 	public static void excute() {
 		Map<String, Component> componentListAadl = new LinkedHashMap<>();
-        Map<String, Channel> channelListAadl = new LinkedHashMap<>();
-        
+		Map<String, Channel> channelListAadl = new LinkedHashMap<>();
+
 		Map<String, Component> componentListSysml = new LinkedHashMap<>();
-        Map<String, Channel> channelListSysml = new LinkedHashMap<>();
-        
+		Map<String, Channel> channelListSysml = new LinkedHashMap<>();
+
 		Map<String, Component> componentListSimulink = new LinkedHashMap<>();
-        Map<String, Channel> channelListSimulink = new LinkedHashMap<>();
-        
-        parseXML("aadl(9).xml", componentListAadl, channelListAadl);
-        parseXML("sysml(4).xml", componentListSysml, channelListSysml);
-        parseXML("simulink(2).xml", componentListSimulink, channelListSimulink);
+		Map<String, Channel> channelListSimulink = new LinkedHashMap<>();
+
+		parseXML("aadl(9).xml", componentListAadl, channelListAadl);
+		parseXML("sysml(4).xml", componentListSysml, channelListSysml);
+		parseXML("simulink(2).xml", componentListSimulink, channelListSimulink);
 //      System.out.println("\naadl存储的结果为：");
 //		for (String componentKey : componentListAadl.keySet()) {
 //			System.out.println("\nComponent id : " + componentKey);
@@ -38,21 +39,20 @@ public class LinkPointTypeAndPeriod {
 //				componentListAadl.get(componentKey).getSubComponentList().get(subComponentKey).attrsToString();
 //			}
 //		}
-        
-        System.out.println("aadl:");
-        linkPointTypeAndPeriodCheck(componentListAadl, channelListAadl);
-        System.out.println("sysml:");
-        linkPointTypeAndPeriodCheck(componentListSysml, channelListSysml);
-        System.out.println("simulink:");
-        linkPointTypeAndPeriodCheck(componentListSimulink, channelListSimulink);
+
+		System.out.println("aadl:");
+		linkPointTypeAndPeriodCheck(componentListAadl, channelListAadl);
+		System.out.println("sysml:");
+		linkPointTypeAndPeriodCheck(componentListSysml, channelListSysml);
+		System.out.println("simulink:");
+		linkPointTypeAndPeriodCheck(componentListSimulink, channelListSimulink);
 	}
 
-	
 	private static void linkPointTypeAndPeriodCheck(Map<String, Component> componentList,
 			Map<String, Channel> channelList) {
 		for (String channelKey : channelList.keySet()) {
-        	Channel currentChannel = channelList.get(channelKey);
-			String sourceId = currentChannel.getAttr("source"); 
+			Channel currentChannel = channelList.get(channelKey);
+			String sourceId = currentChannel.getAttr("source");
 			String destId = currentChannel.getAttr("dest");
 			Linkpoint sourceLinkpoint = null, destLinkpoint = null;
 			for (String componentKey : componentList.keySet()) {
@@ -67,9 +67,10 @@ public class LinkPointTypeAndPeriod {
 					}
 				}
 			}
-			//System.out.println("source id is " + sourceId + " dest id is " + destId);
-			if (destLinkpoint == null || sourceLinkpoint == null) continue;
-			
+			// System.out.println("source id is " + sourceId + " dest id is " + destId);
+			if (destLinkpoint == null || sourceLinkpoint == null)
+				continue;
+
 //			if (sourceLinkpoint.getAttr("period") == null) {
 //				System.out.println("Channel " + currentChannel.getAttr("id") + " : " + 
 //						sourceLinkpoint.getAttr("name") + " does not have period.");
@@ -87,31 +88,26 @@ public class LinkPointTypeAndPeriod {
 			checkTargetProperty(sourceLinkpoint, destLinkpoint, currentChannel, "datatype");
 		}
 	}
-	
-	private static void checkTargetProperty(Linkpoint sourceLinkpoint, 
-									 Linkpoint destLinkpoint, 
-									 Channel currentChannel,
-									 String targetProperty) {
+
+	private static void checkTargetProperty(Linkpoint sourceLinkpoint, Linkpoint destLinkpoint, Channel currentChannel,
+			String targetProperty) {
 		if (sourceLinkpoint.getAttr(targetProperty) == null) {
-			System.out.println("Channel " + currentChannel.getAttr("id") + " : " + 
-					sourceLinkpoint.getAttr("name") + "没有" + targetProperty + "属性。");
+			System.out.println("Channel " + currentChannel.getAttr("id") + " : " + sourceLinkpoint.getAttr("name")
+					+ "没有" + targetProperty + "属性。");
 		} else if (destLinkpoint.getAttr(targetProperty) == null) {
-			System.out.println("Channel " + currentChannel.getAttr("id") + " : " + 
-					destLinkpoint.getAttr("name") + "没有" + targetProperty + "属性。");
+			System.out.println("Channel " + currentChannel.getAttr("id") + " : " + destLinkpoint.getAttr("name") + "没有"
+					+ targetProperty + "属性。");
 		} else {
 			if (!sourceLinkpoint.getAttr(targetProperty).equals(destLinkpoint.getAttr(targetProperty))) {
-				System.out.println("Channel " + currentChannel.getAttr("id") + 
-						" : source linkpoint's " + targetProperty + " " + 
-						sourceLinkpoint.getAttr(targetProperty) + 
-						"与目的linkpoint的" + targetProperty + " " +
-						destLinkpoint.getAttr(targetProperty) +
-						"属性不一致");
+				System.out.println("Channel " + currentChannel.getAttr("id") + " : source linkpoint's " + targetProperty
+						+ " " + sourceLinkpoint.getAttr(targetProperty) + "与目的linkpoint的" + targetProperty + " "
+						+ destLinkpoint.getAttr(targetProperty) + "属性不一致");
 			}
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		excute();
 	}
-	
+
 }
